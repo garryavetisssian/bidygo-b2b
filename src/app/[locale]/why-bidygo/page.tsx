@@ -41,6 +41,7 @@ export default async function WhyBidygoPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(graph) }}
       />
+      {/* ===================== HERO — category, not pricing layer ===================== */}
       <section className="relative overflow-hidden bg-cream-50 pt-12 sm:pt-20 lg:pt-24 pb-16">
         <div aria-hidden className="absolute inset-x-0 top-0 -z-10">
           <div className="absolute top-[-15%] right-0 size-[60vmax] rounded-full bg-[radial-gradient(closest-side,oklch(0.700_0.196_42/0.16),transparent)] blur-3xl animate-glow-soft" />
@@ -71,6 +72,7 @@ export default async function WhyBidygoPage({
         </Container>
       </section>
 
+      {/* ===================== WHY LOST DEMAND IS INVISIBLE — the walk-out moment ===================== */}
       <Section tone="cream">
         <Container size="narrow">
           <span className="eyebrow">
@@ -85,6 +87,7 @@ export default async function WhyBidygoPage({
         </Container>
       </Section>
 
+      {/* ===================== WHY THE TRADE-OFF EXISTS — three truths ===================== */}
       <Section tone="default">
         <Container>
           <div className="max-w-3xl">
@@ -111,6 +114,57 @@ export default async function WhyBidygoPage({
         </Container>
       </Section>
 
+      {/* ===================== WHY BLANKET DISCOUNTS FAIL — not a discount tool ===================== */}
+      <Section tone="cream">
+        <Container>
+          <div className="max-w-3xl">
+            <span className="eyebrow">
+              <Tag className="size-3.5" /> {t("notDiscountEyebrow")}
+            </span>
+            <h2 className="display-2 mt-5 text-pretty">{t("notDiscountTitle")}</h2>
+          </div>
+          <ScrollReveal
+            className="mt-12 grid md:grid-cols-3 gap-6"
+            staggerChildren={90}
+          >
+            {notDiscountPoints.map((p, i) => (
+              <div
+                key={i}
+                className="h-full rounded-3xl bg-white p-7 flex flex-col gap-3 border border-ink-900/5 shadow-elevated transition-all duration-300 hover:border-brand-500/20 hover:-translate-y-1"
+              >
+                <h3 className="text-xl font-bold tracking-tight">{p.title}</h3>
+                <p className="text-ink-700 leading-relaxed flex-1">{p.body}</p>
+              </div>
+            ))}
+          </ScrollReveal>
+        </Container>
+      </Section>
+
+      {/* ===================== THE NEW CAPABILITY — what changes for your shop ===================== */}
+      <Section tone="default">
+        <Container>
+          <div className="max-w-3xl">
+            <span className="eyebrow">{t("storesGainEyebrow")}</span>
+            <h2 className="display-2 mt-5 text-pretty">{t("storesGainTitle")}</h2>
+          </div>
+          <ScrollReveal
+            className="mt-12 grid md:grid-cols-3 gap-6"
+            staggerChildren={90}
+          >
+            {storesGainPoints.map((p, i) => (
+              <div
+                key={i}
+                className="h-full rounded-3xl bg-cream-100 p-7 flex flex-col gap-3 border border-ink-900/5 transition-all duration-300 hover:bg-white hover:-translate-y-1 hover:border-brand-500/25"
+              >
+                <h3 className="text-xl font-bold tracking-tight">{p.title}</h3>
+                <p className="text-ink-700 leading-relaxed flex-1">{p.body}</p>
+              </div>
+            ))}
+          </ScrollReveal>
+        </Container>
+      </Section>
+
+      {/* ===================== HOW IT WORKS — mechanism, deliberately later ===================== */}
       <Section tone="cream">
         <Container>
           <div className="max-w-3xl">
@@ -158,54 +212,7 @@ export default async function WhyBidygoPage({
         </Container>
       </Section>
 
-      <Section tone="default">
-        <Container>
-          <div className="max-w-3xl">
-            <span className="eyebrow">
-              <Tag className="size-3.5" /> {t("notDiscountEyebrow")}
-            </span>
-            <h2 className="display-2 mt-5 text-pretty">{t("notDiscountTitle")}</h2>
-          </div>
-          <ScrollReveal
-            className="mt-12 grid md:grid-cols-3 gap-6"
-            staggerChildren={90}
-          >
-            {notDiscountPoints.map((p, i) => (
-              <div
-                key={i}
-                className="h-full rounded-3xl bg-cream-100 p-7 flex flex-col gap-3 border border-ink-900/5 transition-all duration-300 hover:border-brand-500/20 hover:bg-white hover:-translate-y-1"
-              >
-                <h3 className="text-xl font-bold tracking-tight">{p.title}</h3>
-                <p className="text-ink-700 leading-relaxed flex-1">{p.body}</p>
-              </div>
-            ))}
-          </ScrollReveal>
-        </Container>
-      </Section>
-
-      <Section tone="cream">
-        <Container>
-          <div className="max-w-3xl">
-            <span className="eyebrow">{t("storesGainEyebrow")}</span>
-            <h2 className="display-2 mt-5 text-pretty">{t("storesGainTitle")}</h2>
-          </div>
-          <ScrollReveal
-            className="mt-12 grid md:grid-cols-3 gap-6"
-            staggerChildren={90}
-          >
-            {storesGainPoints.map((p, i) => (
-              <div
-                key={i}
-                className="h-full rounded-3xl bg-white p-7 flex flex-col gap-3 border border-ink-900/5 shadow-elevated transition-all duration-300 hover:-translate-y-1 hover:border-brand-500/25"
-              >
-                <h3 className="text-xl font-bold tracking-tight">{p.title}</h3>
-                <p className="text-ink-700 leading-relaxed flex-1">{p.body}</p>
-              </div>
-            ))}
-          </ScrollReveal>
-        </Container>
-      </Section>
-
+      {/* ===================== FOUNDER ===================== */}
       <Section tone="default">
         <Container size="narrow">
           <span className="eyebrow">{t("founderEyebrow")}</span>
@@ -215,6 +222,7 @@ export default async function WhyBidygoPage({
         </Container>
       </Section>
 
+      {/* ===================== CLOSE ===================== */}
       <Section tone="cocoa" className="relative overflow-hidden">
         <div aria-hidden className="absolute inset-0 bg-noise opacity-[0.10]" />
         <div aria-hidden className="absolute -top-32 -right-32 size-96 rounded-full bg-brand-500/20 blur-3xl" />

@@ -66,7 +66,7 @@ export default async function ForStoresPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(graph) }}
       />
-      {/* ============================ HERO ============================ */}
+      {/* ===================== 1 · HERO — revenue outcome ===================== */}
       <section className="relative overflow-hidden bg-cream-50 pt-12 sm:pt-20 lg:pt-24 pb-20 sm:pb-28">
         <div aria-hidden className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-mesh-warm" />
@@ -136,7 +136,7 @@ export default async function ForStoresPage({
         </Container>
       </section>
 
-      {/* ==================== PROBLEM (split comparison) ==================== */}
+      {/* ===================== 2/3 · WHY RETAILERS CARE + TRADE-OFF (split comparison) ===================== */}
       <Section tone="cream" className="relative overflow-hidden">
         <SectionHeader
           eyebrow={t("problemEyebrow")}
@@ -193,7 +193,7 @@ export default async function ForStoresPage({
         </ScrollReveal>
       </Section>
 
-      {/* ==================== FLOW (steps as editorial rows) ==================== */}
+      {/* ===================== 4 · WHAT CHANGES IN YOUR SHOP (steps) ===================== */}
       <Section tone="default" id="how" className="relative">
         <SectionHeader eyebrow={t("flowEyebrow")} title={t("flowTitle")} />
 
@@ -222,41 +222,7 @@ export default async function ForStoresPage({
         </ScrollReveal>
       </Section>
 
-      {/* ==================== DASHBOARD PREVIEW BLOCK ==================== */}
-      <Section tone="muted" className="relative overflow-hidden">
-        <div aria-hidden className="absolute inset-0 bg-mesh-warm opacity-40" />
-        <Container className="relative">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-5">
-              <span className="eyebrow">
-                <LineChart className="size-3.5" /> Your dashboard
-              </span>
-              <h2 className="display-2 mt-5 text-pretty">
-                Every offer, every rule, in one place.
-              </h2>
-              <p className="mt-5 text-lg text-ink-600 leading-relaxed">
-                The shop sets the rules. Bidygo runs the response. Live offers, accept rates, margins — all in one screen.
-              </p>
-              <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-ink-700">
-                <span className="inline-flex items-center gap-2">
-                  <span className="size-2 rounded-full bg-mint-500" /> Auto-accept by rule
-                </span>
-                <span className="inline-flex items-center gap-2">
-                  <span className="size-2 rounded-full bg-brand-500" /> Auto-counter
-                </span>
-                <span className="inline-flex items-center gap-2">
-                  <span className="size-2 rounded-full bg-ink-700" /> Auto-decline
-                </span>
-              </div>
-            </div>
-            <ScrollReveal className="lg:col-span-7">
-              <DashboardMock />
-            </ScrollReveal>
-          </div>
-        </Container>
-      </Section>
-
-      {/* ==================== SETUP (visual timeline) ==================== */}
+      {/* ===================== 5 · OPERATIONAL DETAILS — setup timeline ===================== */}
       <Section tone="cream">
         <SectionHeader eyebrow={t("setup.eyebrow")} title={t("setup.title")} />
 
@@ -291,7 +257,37 @@ export default async function ForStoresPage({
         </ScrollReveal>
       </Section>
 
-      {/* ==================== COMMERCIAL ==================== */}
+      {/* ===================== 6 · DASHBOARD & CONTROLS ===================== */}
+      <Section tone="muted" className="relative overflow-hidden">
+        <div aria-hidden className="absolute inset-0 bg-mesh-warm opacity-40" />
+        <Container className="relative">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-5">
+              <span className="eyebrow">
+                <LineChart className="size-3.5" /> {t("dashboard.eyebrow")}
+              </span>
+              <h2 className="display-2 mt-5 text-pretty">{t("dashboard.title")}</h2>
+              <p className="mt-5 text-lg text-ink-600 leading-relaxed">{t("dashboard.body")}</p>
+              <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-ink-700">
+                <span className="inline-flex items-center gap-2">
+                  <span className="size-2 rounded-full bg-mint-500" /> {t("dashboard.autoAccept")}
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <span className="size-2 rounded-full bg-brand-500" /> {t("dashboard.autoCounter")}
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <span className="size-2 rounded-full bg-ink-700" /> {t("dashboard.autoDecline")}
+                </span>
+              </div>
+            </div>
+            <ScrollReveal className="lg:col-span-7">
+              <DashboardMock />
+            </ScrollReveal>
+          </div>
+        </Container>
+      </Section>
+
+      {/* ===================== 7 · COMMERCIAL MODEL ===================== */}
       <Section tone="muted">
         <Container size="narrow">
           <div className="text-center">
@@ -323,7 +319,7 @@ export default async function ForStoresPage({
         </Container>
       </Section>
 
-      {/* ==================== OBJECTIONS (magazine Q&A) ==================== */}
+      {/* ===================== OBJECTIONS (magazine Q&A) ===================== */}
       <Section tone="default">
         <SectionHeader eyebrow={t("qsEyebrow")} title={t("qsTitle")} />
 
@@ -344,7 +340,7 @@ export default async function ForStoresPage({
         </ScrollReveal>
       </Section>
 
-      {/* ==================== DEMO / FORM (cocoa) ==================== */}
+      {/* ===================== 8 · CONTACT — demo / form (cocoa) ===================== */}
       <Section tone="cocoa" id="demo" className="relative overflow-hidden">
         <div aria-hidden className="absolute inset-0 bg-mesh-cocoa" />
         <div aria-hidden className="absolute inset-0 bg-noise opacity-[0.08]" />

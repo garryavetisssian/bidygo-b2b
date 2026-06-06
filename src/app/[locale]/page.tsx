@@ -211,10 +211,6 @@ export default async function HomePage({
           isPlaceholder={proof.isPlaceholder}
           disclaimer={proof.disclaimer}
         />
-
-        <p className="mt-10 text-center text-xs text-ink-500 max-w-2xl mx-auto leading-relaxed">
-          {proof.comingNote}
-        </p>
       </Section>
 
       {/* ===================== 3 · WHY IT MATTERS — trade-off + retailer value ===================== */}
