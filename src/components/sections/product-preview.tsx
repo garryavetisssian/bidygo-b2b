@@ -259,7 +259,7 @@ export function ExampleRetailOutcomes() {
               {t("heroValueLabel")}
               <span className="font-normal text-white/55">· {t("heroPeriod")}</span>
             </div>
-            <div className="font-display text-5xl sm:text-6xl font-black tracking-tight tabular-nums leading-none mt-3">
+            <div className="font-display text-[3.5rem] sm:text-6xl lg:text-7xl font-black tracking-[-0.03em] tabular-nums leading-[0.95] mt-3">
               $3,180
             </div>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/90">{t("heroSub")}</p>

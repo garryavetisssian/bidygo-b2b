@@ -49,7 +49,7 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "relative w-full py-20 sm:py-28 lg:py-32",
+        "relative w-full py-16 sm:py-20 lg:py-24",
         tone === "muted" && "bg-cream-100",
         tone === "cream" && "bg-cream-50",
         tone === "cocoa" && "bg-cocoa-700 text-cream-50",
@@ -80,7 +80,7 @@ export function SectionHeader({
   return (
     <div
       className={cn(
-        "flex flex-col gap-5 max-w-3xl",
+        "flex flex-col gap-4 max-w-3xl",
         align === "center" && "items-center text-center mx-auto",
         align === "left" && "items-start text-left",
         className
@@ -89,7 +89,7 @@ export function SectionHeader({
       {eyebrow ? <span className="eyebrow">{eyebrow}</span> : null}
       <h2 className="display-2 text-pretty">{title}</h2>
       {description ? (
-        <p className="text-lg sm:text-xl text-ink-600 text-pretty leading-relaxed max-w-2xl">
+        <p className="text-base sm:text-lg text-ink-600 text-pretty leading-relaxed max-w-2xl">
           {description}
         </p>
       ) : null}
