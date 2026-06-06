@@ -1085,7 +1085,11 @@
       "revenueRecovered": "Revenue recovered",
       "productsWithOffers": "Products receiving offers",
       "avgAcceptedOffer": "Average accepted offer",
-      "avgResponse": "Average response time"
+      "avgResponse": "Average response time",
+      "heroValueLabel": "Revenue recovered",
+      "heroPeriod": "a sample month",
+      "heroSub": "Sales that would've walked out the door — won back at full margin, not fire-sale prices.",
+      "caption": "Illustrative figures. Just below, real shops tell it in their own words."
     }
   }
 }

@@ -24,7 +24,6 @@ import {
   TrendingDown,
   CircleDollarSign,
   Package,
-  Timer,
 } from "lucide-react";
 import { Card } from "@/components/ui/primitives";
 import { cn } from "@/lib/utils";
@@ -236,31 +235,59 @@ export function PreviewDashboard() {
 
 export function ExampleRetailOutcomes() {
   const t = useTranslations("preview.outcomes");
-  const cells = [
+  // Outcome-led hierarchy: recovered REVENUE leads (the money), three supporting
+  // outcome stats give context. No system/speed metrics — outcomes only.
+  const supporting = [
     { label: t("recoveredSales"), value: "42", icon: TrendingUp },
-    { label: t("revenueRecovered"), value: "$3,180", icon: CircleDollarSign },
-    { label: t("productsWithOffers"), value: "96", icon: Package },
     { label: t("avgAcceptedOffer"), value: "$86", icon: Tag },
-    { label: t("avgResponse"), value: "1.4s", icon: Timer },
+    { label: t("productsWithOffers"), value: "96", icon: Package },
   ];
   return (
-    <Card elevated className="p-6 sm:p-8">
-      <div className="flex items-center justify-between gap-4 mb-6">
-        <h3 className="text-xl sm:text-2xl font-bold tracking-tight">{t("title")}</h3>
+    <Card elevated className="p-6 sm:p-8 overflow-hidden">
+      <div className="flex justify-end mb-5">
         <SampleChip label={t("badge")} />
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
-        {cells.map((c) => {
-          const Icon = c.icon;
-          return (
-            <div key={c.label} className="rounded-2xl bg-cream-100 border border-ink-900/[0.05] p-4 flex flex-col gap-1.5">
-              <Icon className="size-5 text-brand-600" />
-              <div className="font-display text-2xl sm:text-3xl font-black tracking-tight tabular-nums text-brand-700">{c.value}</div>
-              <div className="text-[0.7rem] leading-snug font-semibold text-ink-600">{c.label}</div>
+
+      <div className="grid lg:grid-cols-12 gap-5 items-stretch">
+        {/* HERO — the recovered-revenue number does the 3-second work */}
+        <div className="relative lg:col-span-5 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-600 text-white p-7 sm:p-8 flex flex-col justify-center overflow-hidden shadow-[0_18px_40px_-16px_oklch(0.700_0.196_42/0.45)]">
+          <div aria-hidden className="absolute -right-10 -top-10 size-40 rounded-full bg-white/10 blur-2xl" />
+          <div aria-hidden className="absolute inset-0 bg-noise opacity-[0.12] mix-blend-overlay" />
+          <div className="relative">
+            <div className="flex flex-wrap items-center gap-x-2 text-sm font-semibold text-white/85">
+              <CircleDollarSign className="size-4" />
+              {t("heroValueLabel")}
+              <span className="font-normal text-white/55">· {t("heroPeriod")}</span>
             </div>
-          );
-        })}
+            <div className="font-display text-5xl sm:text-6xl font-black tracking-tight tabular-nums leading-none mt-3">
+              $3,180
+            </div>
+            <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/90">{t("heroSub")}</p>
+          </div>
+        </div>
+
+        {/* SUPPORTING — outcome context, visually subordinate to the hero */}
+        <div className="lg:col-span-7 grid sm:grid-cols-3 gap-4">
+          {supporting.map((c) => {
+            const Icon = c.icon;
+            return (
+              <div
+                key={c.label}
+                className="rounded-2xl bg-cream-100 border border-ink-900/[0.05] p-5 flex flex-col gap-2 justify-center"
+              >
+                <Icon className="size-5 text-brand-600" />
+                <div className="font-display text-3xl font-black tracking-tight tabular-nums text-brand-700">
+                  {c.value}
+                </div>
+                <div className="text-xs leading-snug font-semibold text-ink-600">{c.label}</div>
+              </div>
+            );
+          })}
+        </div>
       </div>
+
+      {/* Momentum — points the eye at the real-shop stories directly below */}
+      <p className="mt-6 text-center text-sm text-ink-500">{t("caption")}</p>
     </Card>
   );
 }
