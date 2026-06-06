@@ -993,5 +993,81 @@
     "step5": "Gets the answer",
     "step6": "Show proof, take it home",
     "caption": "From offer to answer in seconds."
+  },
+  "preview": {
+    "anatomy": {
+      "badge": "Illustrative example",
+      "title": "How one sale comes back.",
+      "note": "A sample walk-through — illustrative numbers, not real data.",
+      "product": "Wireless headphones",
+      "shelfLabel": "Shelf price",
+      "offerLabel": "Shopper offers",
+      "offerSub": "What they'd actually pay",
+      "decisionLabel": "Bidygo decides",
+      "decisionValue": "Accepted",
+      "decisionSub": "Within your rules · floor $90",
+      "finalLabel": "Sale closes",
+      "outcomeLabel": "Outcome",
+      "outcomeValue": "Recovered",
+      "outcomeSub": "Would have walked at shelf price",
+      "marginNote": "You kept the sale and stayed above your floor — sample scenario, illustrative only."
+    },
+    "dashboard": {
+      "badge": "Sample dashboard · preview",
+      "title": "Your dashboard, with sample data",
+      "note": "A preview of what you'd see when live.",
+      "recoveredSales": "Recovered sales",
+      "recoveredRevenue": "Recovered revenue",
+      "activeProducts": "Active products",
+      "offersReceived": "Offers received",
+      "avgResponse": "Avg response",
+      "recent": "Recent activity",
+      "period": "this month (sample)"
+    },
+    "activity": {
+      "badge": "Sample activity",
+      "title": "Across Bidygo",
+      "accepted": "accepted",
+      "countered": "countered",
+      "declined": "below floor",
+      "submitted": "offered",
+      "ago": "{m}m ago"
+    },
+    "snapshot": {
+      "badge": "Illustrative platform snapshot",
+      "stores": "Stores in preview",
+      "categories": "Categories active",
+      "offers": "Offers reviewed",
+      "recovered": "Sales recovered"
+    },
+    "profiles": {
+      "badge": "Illustrative store profiles",
+      "size": "Store size",
+      "perWeek": "offers / week (sample)",
+      "perMonth": "recovered / mo (sample)"
+    },
+    "founding": {
+      "badge": "Illustrative · founding cohort",
+      "title": "The first shops are being set up now.",
+      "onboarding": "Currently onboarding",
+      "slots": "Pilot slots",
+      "slotsValue": "{taken} of {total} taken",
+      "categories": "Categories represented",
+      "note": "Founder-led setup. Sample momentum — illustrative only."
+    },
+    "cats": {
+      "electronics": "Electronics",
+      "fashion": "Fashion",
+      "footwear": "Footwear",
+      "beauty": "Beauty",
+      "home": "Home goods"
+    },
+    "products": {
+      "headphones": "Headphones",
+      "sneakers": "Sneakers",
+      "jacket": "Jacket",
+      "blender": "Blender",
+      "perfume": "Perfume"
+    }
   }
 }

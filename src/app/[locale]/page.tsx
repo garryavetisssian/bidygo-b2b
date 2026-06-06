@@ -32,6 +32,14 @@ import { OfferTicker } from "@/components/sections/offer-ticker";
 import { ProofStats, type ProofMetric } from "@/components/sections/proof-stats";
 import { RetailerFlowDemo } from "@/components/sections/retailer-flow-demo";
 import { CalculatorTeaser } from "@/components/sections/calculator-teaser";
+import {
+  RecoveredSaleAnatomy,
+  PreviewDashboard,
+  ActivityFeed,
+  MarketplaceSnapshot,
+  StoreProfiles,
+  FoundingCohort,
+} from "@/components/sections/product-preview";
 import { MomentCard } from "@/components/content/moment-card";
 import { getMoments } from "@/data/moments";
 import { getFounder } from "@/data/founder";
@@ -211,6 +219,12 @@ export default async function HomePage({
           isPlaceholder={proof.isPlaceholder}
           disclaimer={proof.disclaimer}
         />
+
+        {/* Product Preview — illustrative momentum (sample data) */}
+        <ScrollReveal className="mt-14 grid lg:grid-cols-2 gap-5 items-start">
+          <MarketplaceSnapshot />
+          <ActivityFeed />
+        </ScrollReveal>
       </Section>
 
       {/* ===================== 3 · WHY IT MATTERS — trade-off + retailer value ===================== */}
@@ -257,6 +271,16 @@ export default async function HomePage({
         </ScrollReveal>
       </Section>
 
+      {/* ===================== PRODUCT PREVIEW · demonstrate the outcome (sample data) ===================== */}
+      <Section tone="muted">
+        <ScrollReveal>
+          <RecoveredSaleAnatomy />
+        </ScrollReveal>
+        <ScrollReveal className="mt-6">
+          <PreviewDashboard />
+        </ScrollReveal>
+      </Section>
+
       {/* ===================== 4 · WHAT CHANGES IN YOUR SHOP — minimal mechanism, value-framed ===================== */}
       <Section tone="default" id="how-it-works">
         <SectionHeader
@@ -298,6 +322,11 @@ export default async function HomePage({
           {momentItems.map((m) => (
             <MomentCard key={m.id} moment={m} />
           ))}
+        </ScrollReveal>
+
+        {/* Product Preview — illustrative store profiles (sample data) */}
+        <ScrollReveal className="mt-16">
+          <StoreProfiles />
         </ScrollReveal>
 
         <div className="mt-16 max-w-xl mx-auto">
@@ -387,6 +416,13 @@ export default async function HomePage({
       {/* ===================== 7 · CALCULATOR TEASER — opportunity + secondary pricing intelligence ===================== */}
       <Section tone="muted">
         <CalculatorTeaser />
+      </Section>
+
+      {/* ===================== PRODUCT PREVIEW · founding momentum (sample data) ===================== */}
+      <Section tone="cream">
+        <ScrollReveal>
+          <FoundingCohort />
+        </ScrollReveal>
       </Section>
 
       {/* ===================== 8 · CONTACT CTA — with early-market invitation ===================== */}
