@@ -14,26 +14,20 @@ export async function generateMetadata({
 import {
   ArrowRight,
   Sparkles,
-  TrendingUp,
-  ShoppingBag,
-  Tag,
-  Wallet,
-  Handshake,
   CheckCircle2,
   ShieldCheck,
   UserRound,
+  Quote,
+  Star,
 } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
-import { Section, SectionHeader, Container, Badge, Card, CardTitle, CardDescription } from "@/components/ui/primitives";
+import { Section, SectionHeader, Container, Badge } from "@/components/ui/primitives";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { OfferTicker } from "@/components/sections/offer-ticker";
-import { ProofStats, type ProofMetric } from "@/components/sections/proof-stats";
-import { RetailerFlowDemo } from "@/components/sections/retailer-flow-demo";
 import { CalculatorTeaser } from "@/components/sections/calculator-teaser";
 import {
-  HowItWorksGlance,
   RecoveredSaleAnatomy,
   PreviewDashboard,
   ExampleRetailOutcomes,
@@ -43,10 +37,6 @@ import { MomentCard } from "@/components/content/moment-card";
 import { getMoments } from "@/data/moments";
 import { getFounder } from "@/data/founder";
 
-interface ValueItem {
-  title: string;
-  body: string;
-}
 interface ProofAssurance {
   title: string;
   body: string;
@@ -63,15 +53,9 @@ interface ProofContent {
   title: string;
   note: string;
   assurances: ProofAssurance[];
-  comingNote: string;
-  metrics: ProofMetric[];
-  isPlaceholder?: boolean;
-  disclaimer?: string;
 }
 
-// Why-it-matters icons — each maps to a retailer business outcome, not a mechanic.
-const valueIcons = [TrendingUp, ShoppingBag, Tag, Wallet, Handshake];
-// Proof assurance icons — control, margin floor, real person.
+// Decision-point reassurance icons — control, margin floor, real person.
 const assuranceIcons = [CheckCircle2, ShieldCheck, UserRound];
 
 export default async function HomePage({
@@ -85,7 +69,6 @@ export default async function HomePage({
   const t = await getTranslations({ locale, namespace: "homePage" });
   const tHero = await getTranslations({ locale, namespace: "hero" });
 
-  const valueItems = t.raw("value.items") as ValueItem[];
   const proof = t.raw("proof") as ProofContent;
   const industriesGrid = t.raw("industriesGrid") as IndustryGridItem[];
   const momentItems = getMoments(locale);
@@ -104,7 +87,7 @@ export default async function HomePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(graph) }}
       />
 
-      {/* ===================== 1 · HERO — outcome-led, geography-neutral ===================== */}
+      {/* ===================== 1 · HERO — understand the opportunity (Why care) ===================== */}
       <section className="relative overflow-hidden bg-cream-50 pt-12 sm:pt-20 lg:pt-24 pb-20 sm:pb-28 lg:pb-32">
         <div aria-hidden className="absolute inset-x-0 top-0 bottom-0 -z-10">
           <div className="absolute inset-0 bg-mesh-warm" />
@@ -186,244 +169,134 @@ export default async function HomePage({
         </Container>
       </section>
 
-      {/* ===================== HOW IT WORKS IN 5 SECONDS — understanding, before proof ===================== */}
-      <Section tone="default">
-        <HowItWorksGlance />
+      {/* ===================== 2 · RECOVERED SALE ANATOMY — understand the problem (How it works) =====================
+          Customer wants the product → price blocks the purchase → Bidygo recovers the sale.
+          Carries the hero's "#how-it-works" anchor; geography-neutral, illustrative. */}
+      <Section tone="muted" id="how-it-works">
+        <ScrollReveal>
+          <RecoveredSaleAnatomy />
+        </ScrollReveal>
       </Section>
 
-      {/* ===================== 2 · PROOF — real + safe, NO invented numbers ===================== */}
-      <Section tone="muted">
+      {/* ===================== 3 · ILLUSTRATIVE RETAIL OUTCOMES — the value, in numbers (Why care) ===================== */}
+      <Section tone="cream">
         <SectionHeader
-          eyebrow={proof.eyebrow}
-          title={proof.title}
-          description={proof.note}
+          eyebrow={t("numbers.eyebrow")}
+          title={t("numbers.title")}
+          description={t("numbers.note")}
         />
-
-        <ScrollReveal
-          className="mt-12 grid sm:grid-cols-3 gap-5"
-          staggerChildren={80}
-        >
-          {proof.assurances.map((a, i) => {
-            const Icon = assuranceIcons[i] ?? CheckCircle2;
-            return (
-              <Card key={a.title} className="p-7 flex flex-col gap-3 h-full">
-                <div className="size-12 rounded-2xl bg-mint-500/12 text-[oklch(0.45_0.12_165)] grid place-items-center shadow-[inset_0_1px_0_0_oklch(1_0_0/0.6)]">
-                  <Icon className="size-5" />
-                </div>
-                <CardTitle className="text-lg">{a.title}</CardTitle>
-                <CardDescription className="text-sm">{a.body}</CardDescription>
-              </Card>
-            );
-          })}
-        </ScrollReveal>
-
-        {/* Numeric band stays dormant until verified figures land in homePage.proof.metrics */}
-        <ProofStats
-          metrics={proof.metrics ?? []}
-          isPlaceholder={proof.isPlaceholder}
-          disclaimer={proof.disclaimer}
-        />
-
-        {/* Example retail outcomes — illustrative outcome numbers (sample data) */}
-        <ScrollReveal className="mt-14">
+        <ScrollReveal className="mt-12">
           <ExampleRetailOutcomes />
         </ScrollReveal>
       </Section>
 
-      {/* ===================== 3 · WHY IT MATTERS — trade-off + retailer value ===================== */}
-      <Section tone="cream">
-        <SectionHeader
-          eyebrow={t("value.eyebrow")}
-          title={t("value.title")}
-          description={t("value.note")}
-        />
+      {/* ===================== 4 · TESTIMONIALS / REAL SHOPS — the trust bridge (Why trust) =====================
+          Deliberately the most prominent block on the page, placed right after the numbers.
+          Locations live HERE (and in case studies) — never in the Product Preview layer. */}
+      <Section tone="default" id="trust" className="relative overflow-hidden py-24 sm:py-32">
+        <div aria-hidden className="absolute inset-0 -z-10">
+          <div className="absolute inset-0 bg-mesh-warm opacity-70" />
+          <div className="absolute top-[-20%] right-[-10%] size-[55vmax] rounded-full bg-[radial-gradient(closest-side,oklch(0.700_0.196_42/0.16),transparent)] blur-3xl" />
+        </div>
 
-        <ScrollReveal
-          className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
-          staggerChildren={90}
-        >
-          {valueItems.map((item, i) => {
-            const Icon = valueIcons[i] ?? TrendingUp;
-            return (
-              <Card
-                key={item.title}
-                interactive
-                className="group relative p-7 lg:p-8 flex flex-col gap-4 h-full overflow-hidden"
-              >
-                <div
-                  aria-hidden
-                  className="absolute left-0 top-6 bottom-6 w-[3px] rounded-r-full bg-gradient-to-b from-brand-400 via-brand-500 to-brand-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                />
-                <span
-                  aria-hidden
-                  className="absolute -top-2 -right-1 font-display font-black text-[5rem] leading-none text-ink-900/[0.04] tabular-nums select-none transition-colors duration-300 group-hover:text-brand-500/[0.10]"
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
+        <Container>
+          <div className="text-center max-w-2xl mx-auto">
+            <div className="inline-flex items-center gap-1.5 mb-5">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} className="size-4 fill-brand-500 text-brand-500" />
+              ))}
+            </div>
+            <span className="eyebrow justify-center">{t("momentsEyebrow")}</span>
+            <h2 className="display-2 mt-4 text-pretty">{t("momentsTitle")}</h2>
+            <p className="mt-5 text-lg text-ink-700 leading-relaxed text-pretty">{t("momentsBody")}</p>
+          </div>
 
-                <div className="relative flex items-start justify-between">
-                  <div className="relative size-14 rounded-2xl bg-gradient-to-br from-brand-500/15 to-brand-500/5 text-brand-700 grid place-items-center transition-all duration-300 group-hover:scale-[1.06] shadow-[inset_0_1px_0_0_oklch(1_0_0/0.6)]">
-                    <Icon className="size-6" />
+          <ScrollReveal
+            className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5"
+            staggerChildren={70}
+          >
+            {momentItems.map((m) => (
+              <MomentCard key={m.id} moment={m} />
+            ))}
+          </ScrollReveal>
+
+          {/* Featured founder testimonial — the human behind the trust */}
+          <ScrollReveal className="mt-12">
+            <div className="relative mx-auto max-w-3xl rounded-[2rem] bg-white border border-ink-900/[0.07] shadow-[0_24px_60px_-28px_oklch(0.155_0.018_36/0.28)] p-8 sm:p-12 overflow-hidden">
+              <Quote aria-hidden className="absolute -top-3 -left-2 size-24 text-brand-500/10 rotate-180" />
+              <div className="relative flex flex-col items-center text-center gap-6">
+                <p className="font-[family-name:var(--font-signature)] text-3xl sm:text-4xl text-ink-900 leading-snug text-balance">
+                  &ldquo;{t("trust.founderQuote")}&rdquo;
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="size-12 rounded-full bg-brand-500/15 grid place-items-center text-brand-700 font-bold text-lg shrink-0">
+                    {founder?.name.charAt(0) ?? "V"}
+                  </div>
+                  <div className="text-left">
+                    <div className="font-semibold text-ink-900">{founder?.name ?? "Vahagn Khachatryan"}</div>
+                    <div className="text-sm text-ink-500">{t("trust.founderRole")}</div>
                   </div>
                 </div>
-                <CardTitle>{item.title}</CardTitle>
-                <CardDescription className="text-base">{item.body}</CardDescription>
-              </Card>
-            );
-          })}
-        </ScrollReveal>
-      </Section>
-
-      {/* ===================== PRODUCT PREVIEW · demonstrate the outcome (sample data) ===================== */}
-      <Section tone="muted">
-        <ScrollReveal>
-          <RecoveredSaleAnatomy />
-        </ScrollReveal>
-        <ScrollReveal className="mt-6">
-          <PreviewDashboard />
-        </ScrollReveal>
-      </Section>
-
-      {/* ===================== 4 · WHAT CHANGES IN YOUR SHOP — minimal mechanism, value-framed ===================== */}
-      <Section tone="default" id="how-it-works">
-        <SectionHeader
-          eyebrow={t("flowEyebrow")}
-          title={t("flowTitle")}
-          description={t("flowNote")}
-        />
-
-        <div className="mt-14">
-          <RetailerFlowDemo />
-        </div>
-
-        {/* Supporting credibility — category language used once, low */}
-        <p className="mt-10 text-center text-sm text-ink-500 max-w-xl mx-auto leading-relaxed">
-          {t("flowCredibility")}
-        </p>
-
-        <div className="mt-10 flex justify-center">
-          <Link href="/for-stores">
-            <Button size="lg" variant="secondary">
-              {t("howCta")} <ArrowRight />
-            </Button>
-          </Link>
-        </div>
-      </Section>
-
-      {/* ===================== 5 · TESTIMONIALS & STORES — local proof shows naturally ===================== */}
-      <Section tone="cream" id="trust">
-        <SectionHeader
-          eyebrow={t("momentsEyebrow")}
-          title={t("momentsTitle")}
-          description={t("momentsBody")}
-        />
-
-        <ScrollReveal
-          className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5"
-          staggerChildren={70}
-        >
-          {momentItems.map((m) => (
-            <MomentCard key={m.id} moment={m} />
-          ))}
-        </ScrollReveal>
-
-        {/* Product Preview — illustrative store profiles (sample data) */}
-        <ScrollReveal className="mt-16">
-          <StoreProfiles />
-        </ScrollReveal>
-
-        <div className="mt-16 max-w-xl mx-auto">
-          <div className="rounded-3xl bg-white border border-ink-900/8 shadow-sm p-6 sm:p-7 flex flex-col sm:flex-row items-start sm:items-center gap-5">
-            <div className="size-14 rounded-full bg-brand-500/15 grid place-items-center text-brand-700 font-bold text-xl shrink-0">
-              {founder?.name.charAt(0) ?? "V"}
-            </div>
-            <div className="flex-1">
-              <p className="font-[family-name:var(--font-signature)] text-2xl sm:text-[1.75rem] text-ink-900 leading-tight">
-                &ldquo;{t("trust.founderQuote")}&rdquo;
-              </p>
-              <div className="mt-2 text-sm text-ink-600">
-                <span className="font-semibold text-ink-900">{founder?.name ?? "Vahagn Khachatryan"}</span>
-                <span className="text-ink-400 mx-1.5">·</span>
-                <span>{t("trust.founderRole")}</span>
               </div>
             </div>
+          </ScrollReveal>
+
+          <p className="mt-10 text-center text-sm text-ink-500 max-w-md mx-auto leading-relaxed">
+            {t("trust.honesty")}
+          </p>
+
+          <div className="mt-8 flex justify-center">
+            <Link href="/stories">
+              <Button size="lg">
+                {t("trust.cta")} <ArrowRight />
+              </Button>
+            </Link>
           </div>
-        </div>
-
-        <p className="mt-8 text-center text-xs text-ink-500 max-w-md mx-auto leading-relaxed">
-          {t("trust.honesty")}
-        </p>
-
-        <div className="mt-10 flex justify-center">
-          <Link href="/stories">
-            <Button size="lg" variant="secondary">
-              {t("trust.cta")} <ArrowRight />
-            </Button>
-          </Link>
-        </div>
+        </Container>
       </Section>
 
-      {/* ===================== 6 · INDUSTRIES — category-fit qualification ===================== */}
-      <Section tone="default">
+      {/* ===================== 5 · EXPLORE THE PRODUCT — Dashboard + Store profiles (How it works) =====================
+          Deeper product content lives AFTER the trust bridge. Sample data, geography-free. */}
+      <Section tone="muted">
         <SectionHeader
-          eyebrow={t("industriesEyebrow")}
-          title={t("industriesTitle")}
-          description={t("industriesNote")}
+          eyebrow={t("explore.eyebrow")}
+          title={t("explore.title")}
+          description={t("explore.note")}
         />
-
-        <ScrollReveal
-          className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
-          staggerChildren={80}
-        >
-          {industriesGrid.map((ind, i) => (
-            <Link
-              key={ind.slug}
-              href={ind.slug === "all" ? "/for-stores" : `/solutions/${ind.slug}`}
-              className="group h-full"
-            >
-              <Card interactive className="relative overflow-hidden h-full flex flex-col">
-                <span
-                  aria-hidden
-                  className="absolute top-2 left-4 font-display font-black text-[5.5rem] leading-none text-white/30 tabular-nums select-none mix-blend-overlay pointer-events-none z-[1]"
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div
-                  className={`relative h-44 ${ind.bg} grid place-items-center text-6xl transition-transform duration-500 group-hover:scale-[1.05] overflow-hidden`}
-                >
-                  <span className="relative z-[2] transition-transform duration-500 group-hover:scale-110">
-                    {ind.emoji}
-                  </span>
-                  <div
-                    aria-hidden
-                    className="absolute bottom-0 inset-x-0 h-3 bg-barcode opacity-30 [mask-image:linear-gradient(to_right,transparent,#000_20%,#000_80%,transparent)]"
-                  />
-                  <div
-                    aria-hidden
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(60%_60%_at_50%_50%,oklch(1_0_0/0.20),transparent)]"
-                  />
-                </div>
-                <div className="relative p-6 flex flex-col gap-2 flex-1">
-                  <h3 className="text-xl font-bold tracking-tight">{ind.name}</h3>
-                  <p className="text-ink-600 leading-relaxed flex-1">{ind.tagline}</p>
-                  <span className="inline-flex items-center gap-1.5 text-brand-700 font-semibold text-sm mt-3 group-hover:gap-2 transition-all">
-                    {t("industriesCta")} <ArrowRight className="size-4" />
-                  </span>
-                </div>
-              </Card>
-            </Link>
-          ))}
+        <ScrollReveal className="mt-12">
+          <PreviewDashboard />
+        </ScrollReveal>
+        <ScrollReveal className="mt-12">
+          <StoreProfiles />
         </ScrollReveal>
       </Section>
 
-      {/* ===================== 7 · CALCULATOR TEASER — opportunity + secondary pricing intelligence ===================== */}
-      <Section tone="muted">
+      {/* ===================== 6 · CALCULATOR — your own numbers (Why care) ===================== */}
+      <Section tone="cream">
         <CalculatorTeaser />
       </Section>
 
-      {/* ===================== 8 · CONTACT CTA — with early-market invitation ===================== */}
+      {/* ===================== 7 · CONTACT — with decision-point reassurance (Why trust → conversion) ===================== */}
       <Section tone="default" noContainer className="py-24 sm:py-32">
         <Container>
+          {/* Slim "safe to try" reassurance row — objection handling at the decision point */}
+          <ScrollReveal className="mb-14 grid sm:grid-cols-3 gap-5">
+            {proof.assurances.map((a, i) => {
+              const Icon = assuranceIcons[i] ?? CheckCircle2;
+              return (
+                <div key={a.title} className="flex items-start gap-3">
+                  <div className="size-10 rounded-2xl bg-mint-500/12 text-[oklch(0.45_0.12_165)] grid place-items-center shrink-0 shadow-[inset_0_1px_0_0_oklch(1_0_0/0.6)]">
+                    <Icon className="size-5" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-ink-900 leading-tight">{a.title}</div>
+                    <p className="mt-1 text-sm text-ink-600 leading-relaxed">{a.body}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </ScrollReveal>
+
           <ScrollReveal>
             <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-brand-500 via-brand-500 to-brand-600 p-10 sm:p-16 lg:p-20 text-white">
               <div aria-hidden className="absolute inset-0 bg-noise opacity-[0.18] mix-blend-overlay" />

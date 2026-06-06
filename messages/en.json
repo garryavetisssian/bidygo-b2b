@@ -487,7 +487,17 @@
       "intelNote": "And as the sales come in, you start to see what your shoppers will actually pay."
     },
     "closingInvite": "New here? Bidygo is open to its first shops in new markets — yours could be one of them.",
-    "flowCredibility": "It's the kind of revenue discipline big chains have used for years — made simple enough for a single shop."
+    "flowCredibility": "It's the kind of revenue discipline big chains have used for years — made simple enough for a single shop.",
+    "numbers": {
+      "eyebrow": "The value, in numbers",
+      "title": "What a good month can look like",
+      "note": "Illustrative figures — sample data showing the kind of sales a shop can win back. Nothing borrowed, nothing inflated. Your real numbers start the day you do."
+    },
+    "explore": {
+      "eyebrow": "Explore the product",
+      "title": "See it the way a shop owner does",
+      "note": "The same screens you'd open every day — incoming offers, what you recovered, and a quick read on shops like yours. Sample data, real product."
+    }
   },
   "forStoresPage": {
     "eyebrow": "For shop owners",
