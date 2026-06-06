@@ -1,0 +1,959 @@
+{
+  "meta": {
+    "title": "Bidygo — More sales for your shop, without dropping your shelf price",
+    "titleTemplate": "%s | Bidygo for shops",
+    "description": "Bidygo helps real shops sell more. Shoppers offer the price they would pay. Shops approve, counter, or pass — instantly, on their phone.",
+    "org": {
+      "description": "Bidygo helps real shops sell more. Shoppers offer the price they would pay. Shops approve, counter, or pass — instantly, on their phone."
+    },
+    "home": {
+      "title": "Bidygo — Turn one in five walk-outs into a buyer",
+      "description": "More sales for your shop, without dropping your shelf price. Shoppers offer, you approve.",
+      "ogTitle": "Bidygo: real shops, real shoppers, real numbers",
+      "ogDescription": "The quiet way for shoppers to ask. The fast way for shops to answer."
+    },
+    "forStores": {
+      "title": "For Stores — How Bidygo works for shop owners",
+      "description": "Your shop, their price, you always say yes — or no. The retailer side of Bidygo in plain language.",
+      "ogTitle": "Bidygo for shop owners",
+      "ogDescription": "Approve, counter, or pass. From your phone, in seconds."
+    },
+    "whyBidygo": {
+      "title": "Why Bidygo — The thinking behind it",
+      "description": "We built Bidygo because shoppers walk out of real shops every day over a few percent. Here's why we think that can change."
+    },
+    "founder": {
+      "title": "Meet Vahagn Khachatryan — Founder of Bidygo",
+      "description": "Vahagn Khachatryan started Bidygo in Yerevan. Here's why, and how to reach him directly."
+    },
+    "pricing": {
+      "title": "Pricing — What you pay (and what you don't)",
+      "description": "A monthly subscription plus 5% of the sales Bidygo helps close. Exact tier and numbers on the first message."
+    },
+    "calculator": {
+      "title": "Your Numbers — What Bidygo could do for your shop",
+      "description": "A quick calculator: tell us your monthly visitors, what they spend, and your conversion. We'll show you what Bidygo can change."
+    },
+    "stories": {
+      "title": "Stories — Real shops, in real time",
+      "description": "Pulse from our first shops. Full case studies launch with our first partners."
+    },
+    "contact": {
+      "title": "Contact — Reach Bidygo on WhatsApp, Telegram, or email",
+      "description": "Three direct ways to reach the team. We answer within one working day, often sooner."
+    },
+    "about": {
+      "title": "About Bidygo — Built in Yerevan",
+      "description": "We're building the pricing layer the next decade of retail will be built on. Here's who we are."
+    },
+    "resources": {
+      "title": "Resources — Short reads for shop owners",
+      "description": "Essays, playbooks, and benchmarks on selling more, moving inventory, and serving real shoppers."
+    },
+    "resourceArticle": {
+      "title": "Bidygo Resources",
+      "description": "Short reads for shop owners."
+    },
+    "industry": {
+      "title": "Bidygo for your category",
+      "description": "How letting shoppers offer the price works in your category."
+    },
+    "privacy": {
+      "title": "Privacy — How Bidygo handles your data",
+      "description": "Plain-language explanation of what we collect, why, and what we never do."
+    },
+    "terms": {
+      "title": "Terms of service — Bidygo",
+      "description": "The terms you agree to when you use Bidygo."
+    },
+    "cookies": {
+      "title": "Cookies — What Bidygo stores in your browser",
+      "description": "Two cookies. One for your language. One so the site remembers you said yes."
+    },
+    "glossary": {
+      "title": "Glossary — The language of shopper-led pricing",
+      "description": "Floor, ceiling, counter, walk-out, accept rate. Every term Bidygo uses, defined in plain English with real retail examples.",
+      "ogTitle": "Retail pricing glossary | Bidygo",
+      "ogDescription": "Definitions, examples, and links between every Bidygo term."
+    },
+    "glossaryTerm": {
+      "title": "Bidygo glossary",
+      "description": "A term in the Bidygo retail pricing glossary."
+    },
+    "comparison": {
+      "title": "Bidygo comparisons — head to head",
+      "description": "How Bidygo compares to discounting, loyalty programs, dynamic pricing and other retail tactics."
+    }
+  },
+  "calculatorPage": {
+    "eyebrow": "Your numbers",
+    "headline": "See what Bidygo could do for your shop.",
+    "subhead": "Three quick inputs. Real numbers from your shop. We'll show you how much new sales Bidygo can bring you in a month.",
+    "stubBody": "The interactive calculator ships in Wave 2. In the meantime: tell us your monthly visitors and what your shop sells, and we'll send you back your numbers within a day.",
+    "ctaButton": "Get my numbers by email"
+  },
+  "contactPage": {
+    "eyebrow": "Get in touch",
+    "headline": "Tell us about your shop.",
+    "subhead": "Fill out the form below — we'll come back to you within one working day with the right next step.",
+    "formEyebrow": "Partner request",
+    "formTitle": "Bring Bidygo to your shop",
+    "formBody": "Three minutes. Real reply, not a bot loop. We answer within one working day.",
+    "alternativesEyebrow": "Other ways to reach us",
+    "alternativesTitle": "Prefer a quick message instead?",
+    "alternativesBody": "Telegram and WhatsApp work for short questions. For setup, the form above is faster.",
+    "partner": {
+      "title": "Bring Bidygo to your shop",
+      "body": "Run a 30-day trial in your shop. Free for the first shops with us.",
+      "cta": "Book a demo"
+    },
+    "press": {
+      "title": "Press & media",
+      "body": "Founder bios, logos, screenshots, pilot data. Within 24h on deadline."
+    },
+    "general": {
+      "title": "General questions",
+      "body": "Anything else — product questions, ideas, suggestions. We read every email."
+    },
+    "where": {
+      "eyebrow": "Where we are",
+      "headline": "One team in Yerevan, reachable on your time.",
+      "subhead": "We answer in your timezone. For partner meetings, we travel."
+    },
+    "follow": {
+      "headline": "Following us is the easiest way to stay current.",
+      "body": "Twitter and LinkedIn for product updates. Newsletter (sign up in the footer) for monthly retail intelligence."
+    }
+  },
+  "aboutPage": {
+    "eyebrow": "About Bidygo",
+    "headline": "We're building the pricing layer the next decade of retail will be built on.",
+    "subhead": "Bidygo was born in Yerevan from one observation: every retailer we knew was losing customers to the same problem — shoppers walking out because the shelf price was a few percent too high. The tools for fixing that problem were stuck in 1995. So we built new ones.",
+    "thesis": {
+      "eyebrow": "Our thesis",
+      "headline": "Physical retail isn't dying. It's just under-instrumented.",
+      "para1": "Most of the \"death of retail\" narrative is wrong. Foot traffic is steady, basket sizes are growing, and physical conversion still dwarfs online for most considered purchases.",
+      "para2": "What's broken is the instrumentation. Stores have one price (the shelf), one signal (POS), and no way to talk to shoppers in the moment a decision is being made. That's a software problem, not an industry-decline problem.",
+      "para3": "Bidygo fixes the instrumentation. Shoppers can act on what they see, in real-time. Retailers can respond, in real-time. Every interaction becomes data. Every walk-out becomes an opportunity."
+    },
+    "principles": {
+      "eyebrow": "What we believe",
+      "headline": "A few principles we keep coming back to.",
+      "items": [
+        {
+          "title": "Retailers stay in control.",
+          "body": "We never lower a price the retailer didn't authorize. Bidygo is a software layer, not a marketplace."
+        },
+        {
+          "title": "Shoppers stay informed.",
+          "body": "Counter offers, accept rates, average response time — every shopper sees the same data the retailer does."
+        },
+        {
+          "title": "Software beats spreadsheets.",
+          "body": "Every pricing decision should be auditable, repeatable, and tunable. No more 'the manager said okay.'"
+        },
+        {
+          "title": "Data outlasts deals.",
+          "body": "Even a declined offer is useful. We treat the rejection curve as carefully as the acceptance curve."
+        },
+        {
+          "title": "Trust compounds.",
+          "body": "Both sides learn from every interaction. The platform gets smarter the longer you use it."
+        },
+        {
+          "title": "Local first, then global.",
+          "body": "We build for Armenian shop owners because we know them. The patterns generalize wherever shops sell to shoppers."
+        }
+      ]
+    },
+    "markets": {
+      "eyebrow": "Where we work",
+      "headline": "Built in Yerevan. For shop owners wherever shoppers walk in.",
+      "subhead": "We started in Armenia because we know it best and the retail talent here is exceptional. We'll go where the first shops point us next — and we'll say so when we get there, not before.",
+      "items": [
+        {
+          "city": "Yerevan",
+          "phase": "Today · Live",
+          "note": "First shops up and running across electronics, fashion, and more."
+        },
+        {
+          "city": "Wherever shops want us next",
+          "phase": "Soon",
+          "note": "We'll go where the first shops point us. Less roadmap PR, more shop owners actually using it."
+        }
+      ]
+    },
+    "careers": {
+      "eyebrow": "Careers",
+      "headline": "We're hiring engineers, designers, and retail partnership leads.",
+      "subhead": "Yerevan-based with hybrid flexibility. If you've worked in retail, fintech, or consumer apps and want to ship something that physically shows up in stores, we'd love to hear from you.",
+      "applyCta": "careers@bidygo.com",
+      "otherCta": "Other inquiries"
+    },
+    "press": {
+      "headline": "Press & media kit",
+      "body": "Logos, screenshots, founder bios, and the latest trial results. Email <email>press@bidygo.com</email> with deadline and we'll respond within 24 hours.",
+      "cta": "press@bidygo.com"
+    }
+  },
+  "forms": {
+    "partner": {
+      "title": "Tell us about your shop.",
+      "subtitle": "Takes about 90 seconds. We answer within one working day.",
+      "name": "Your name",
+      "namePlaceholder": "Anna Karapetyan",
+      "role": "Your role",
+      "rolePlaceholder": "Head of Retail",
+      "company": "Shop or company name",
+      "companyPlaceholder": "Karasi Electronics",
+      "email": "Work email",
+      "emailPlaceholder": "you@retailer.com",
+      "website": "Website (optional)",
+      "websitePlaceholder": "https://",
+      "country": "Country / market",
+      "countryPlaceholder": "Armenia",
+      "category": "Primary category",
+      "categoryChoose": "Choose one",
+      "categoryOptions": {
+        "electronics": "Electronics & appliances",
+        "fashion": "Fashion & apparel",
+        "footwear": "Footwear",
+        "beauty": "Beauty & personal care",
+        "homeGoods": "Home goods & furniture",
+        "other": "Other"
+      },
+      "storeCount": "Number of shops",
+      "storeCountOptions": {
+        "1": "1 shop",
+        "2-5": "2–5 shops",
+        "6-20": "6–20 shops",
+        "21-100": "21–100 shops",
+        "100+": "100+ shops"
+      },
+      "notes": "Anything we should know before the call?",
+      "notesPlaceholder": "POS system, ideas, languages — anything helpful.",
+      "required": "required",
+      "submit": "Send",
+      "submitting": "Sending…",
+      "consent": "By submitting you agree to our <privacy>privacy notice</privacy>. We'll only use this to reply about a partnership.",
+      "successTitle": "Thanks — we've got you.",
+      "successFallback": "In the meantime, email <email>partners@bidygo.com</email> with anything we should know before the call.",
+      "errorBanner": "Please fix the highlighted fields and try again.",
+      "phone": "Phone or WhatsApp",
+      "phonePlaceholder": "+374 …"
+    }
+  },
+  "homePage": {
+    "headlineFirst": "More sales from the shoppers",
+    "headlineHighlight": "already in your shop.",
+    "trustBadges": {
+      "noLockIn": "Honest pricing",
+      "approvalOnly": "Shop-approved offers only",
+      "fast": "Live in 14 days"
+    },
+    "pillarsEyebrow": "What Bidygo does",
+    "pillarsTitle": "Six things shoppers love about Bidygo.",
+    "pillarsNote": "Each one built for the way real people walk into real shops — not the way enterprise software pretends they do.",
+    "pillars": [
+      {
+        "title": "Offer your own price",
+        "body": "The mechanic that started it all. Shoppers offer what they'd pay. Bidygo answers in seconds — by your rules, per product, per category."
+      },
+      {
+        "title": "Smart shopping",
+        "body": "Barcode scan, product context, alternatives — everything a shopper needs to commit, before they walk out of the shop."
+      },
+      {
+        "title": "Price tracking",
+        "body": "Wishlists, price drops, push alerts. We bring shoppers back to your shelf the moment your price matches what they'd pay."
+      },
+      {
+        "title": "Real shops, real moments",
+        "body": "Your shop stays the experience. We add the digital layer that turns browsers into buyers without lowering your shelf price."
+      },
+      {
+        "title": "Real interactions",
+        "body": "Real conversations, not anonymous foot traffic. Every offer is a signal: this shopper wants this product at this price, today."
+      },
+      {
+        "title": "What shoppers actually pay",
+        "body": "Real numbers per category, per region, per product. Stop running sales in the dark. Price like you can see demand."
+      }
+    ],
+    "howEyebrow": "How it works",
+    "howTitle": "A shopper walks in. A deal walks out.",
+    "howNote": "No queues. No haggling theatre. No discount codes for every visitor.",
+    "howSteps": [
+      {
+        "title": "Shopper walks into your shop.",
+        "body": "They see the product. They love it. The shelf price gives them pause — they're about to walk out empty-handed."
+      },
+      {
+        "title": "They scan the barcode and offer a price.",
+        "body": "Scan the barcode, propose what they'd pay, send. The offer goes to you in real time — with their context attached."
+      },
+      {
+        "title": "Bidygo answers in seconds — by your rules.",
+        "body": "Your floors, ceilings, and counter rules in the dashboard run the response automatically. You turn a shopper who would have left — or capture a data point either way."
+      },
+      {
+        "title": "They show the accepted offer at checkout.",
+        "body": "Your floor staff sees the agreed price on the shopper's phone, completes the sale, and they walk out with the box. No new workflow on your side."
+      }
+    ],
+    "howCta": "See your side of Bidygo",
+    "industriesEyebrow": "Built for",
+    "industriesTitle": "Where Bidygo helps most.",
+    "industriesNote": "Five categories where shoppers hesitate the longest — and where letting them name their price moves more inventory than blanket discounts ever could.",
+    "industriesGrid": [
+      {
+        "slug": "electronics",
+        "name": "Electronics & appliances",
+        "tagline": "High-consideration shoppers walk out daily over $40 on a $400 device. Catch them instead.",
+        "emoji": "📱",
+        "bg": "bg-[oklch(0.92_0.06_240)]"
+      },
+      {
+        "slug": "fashion",
+        "name": "Fashion & apparel",
+        "tagline": "Margin protected. Stock cleared. No site-wide sale that trains shoppers to wait.",
+        "emoji": "👗",
+        "bg": "bg-[oklch(0.92_0.06_330)]"
+      },
+      {
+        "slug": "footwear",
+        "name": "Footwear",
+        "tagline": "Size mismatches, seasonal tails, last-of-stock pairs — moved at a price that still makes sense.",
+        "emoji": "👟",
+        "bg": "bg-[oklch(0.92_0.07_60)]"
+      },
+      {
+        "slug": "beauty",
+        "name": "Beauty & personal care",
+        "tagline": "Premium products need premium positioning. Flexibility one shopper at a time, not on the shelf.",
+        "emoji": "💄",
+        "bg": "bg-[oklch(0.92_0.07_15)]"
+      },
+      {
+        "slug": "home-goods",
+        "name": "Home goods & furniture",
+        "tagline": "Big-ticket, long deliberation. Close the deal in the showroom — at a price both sides can live with.",
+        "emoji": "🛋️",
+        "bg": "bg-[oklch(0.93_0.05_140)]"
+      },
+      {
+        "slug": "all",
+        "name": "More categories coming",
+        "tagline": "Sports, books, tools, baby — if your shoppers hesitate before buying, Bidygo works.",
+        "emoji": "🛍️",
+        "bg": "bg-cream-200"
+      }
+    ],
+    "industriesCta": "See this for my shop",
+    "statsEyebrow": "Numbers behind the stories",
+    "statsTitle": "The metrics that move when you stop discounting blindly.",
+    "statsBody": "We're a young company shipping trials with the first shops in Yerevan. These are the early numbers we're working from.",
+    "statsBadge": "Honest framing — full stories launching with the first shops",
+    "stats": [
+      {
+        "value": "+18%",
+        "label": "Shop more shoppers buying",
+        "body": "Early trial number on previously walk-out shoppers — measured before vs. after Bidygo."
+      },
+      {
+        "value": "0",
+        "label": "Blanket discounts needed",
+        "body": "Offers are negotiated 1:1, not posted on the shelf. Your list price stays intact for shoppers who'll pay it."
+      },
+      {
+        "value": "14d",
+        "label": "From trial to live",
+        "body": "We work with your POS, train your floor staff, and ship the dashboard in two weeks."
+      },
+      {
+        "value": "100%",
+        "label": "Shop approval control",
+        "body": "No price ever drops below your set floor. Bidygo accepts only inside your rules — anything below is auto-declined."
+      }
+    ],
+    "quoteText": "We stopped running blanket promotions. Bidygo lets us see, per product, exactly what a real shopper would pay — and our floors decide the deal automatically.",
+    "quoteAuthor": "Shopkeeper, electronics chain",
+    "quoteLocation": "Yerevan · One of our first shops",
+    "closingTitle": "Bring Bidygo to your shop.",
+    "closingBody": "A 20-minute call. We'll show you the live dashboard, what shops in your category are seeing, and what a 30-day trial looks like in your stores.",
+    "closingPrimary": "Book a quick look",
+    "closingSecondary": "Talk to our team",
+    "momentsEyebrow": "Real shops",
+    "momentsTitle": "Moments from shops on Bidygo",
+    "momentsBody": "Pulse from the floor. Real offers, real outcomes — names changed, the rest is exactly what happened this week.",
+    "momentsTickerCaption": "Anonymized live feed from shops on Bidygo.",
+    "flowEyebrow": "What changes in your shop",
+    "flowTitle": "Same shop. One new way to win the sale.",
+    "flowNote": "You keep your prices, your staff, your setup. Bidygo just gives you a way to catch the sale that was about to walk out — on your terms. You set the limits, nothing ever sells below your floor, and every deal is your call.",
+    "trust": {
+      "eyebrow": "Real proof",
+      "title": "Real stores. Real shoppers.",
+      "body": "Here's what we can show today. Full case studies come as our first shops finish their data window.",
+      "tickerCaption": "Live and anonymized. Updates every few seconds.",
+      "founderQuote": "I onboard every first shop personally.",
+      "founderRole": "Founder",
+      "honesty": "First names are changed. Cities, verticals, and outcomes are real.",
+      "cta": "See all stories"
+    },
+    "proof": {
+      "eyebrow": "Why you can trust it",
+      "title": "Real sales, recovered safely — on your terms.",
+      "note": "We're early, and honest about it. Here's what's true today — and the numbers we'll show as our first shops report them.",
+      "assurances": [
+        {
+          "title": "You approve every sale",
+          "body": "Nothing happens without your yes. Bidygo only ever works inside the rules you set."
+        },
+        {
+          "title": "Never below your floor",
+          "body": "You set the lowest price you'd accept. Nothing clears under it — not once."
+        },
+        {
+          "title": "A real person sets you up",
+          "body": "Our founder onboards every first shop personally, and stays close while you find your footing."
+        }
+      ],
+      "comingNote": "Sales recovered, shops live, revenue won back — we'll show verified numbers here as our first shops finish their first weeks. No borrowed figures, no inflated claims.",
+      "metrics": []
+    },
+    "value": {
+      "eyebrow": "Why it matters",
+      "title": "Win the sale without losing the margin.",
+      "note": "Until now you've had two choices: keep your price and watch the shopper leave, or drop it and hand margin to people who'd have paid full. The ones you lose don't argue — they just go, and you never know how many. Bidygo is the controlled middle: you keep the sale, your price, and finally a view of the demand you were missing.",
+      "items": [
+        {
+          "title": "More revenue from the same foot traffic",
+          "body": "Turn the shoppers who leave empty-handed into paying customers — without paying for a single extra visit."
+        },
+        {
+          "title": "Fewer sales lost at the door",
+          "body": "The shopper who'd have walked gets one more reason to buy today — and shows up as demand you can finally see."
+        },
+        {
+          "title": "No blanket discounts",
+          "body": "Your shelf price stays intact. You only move on a sale when the math works for you."
+        },
+        {
+          "title": "No extra ad spend",
+          "body": "Close the demand that's already in your shop instead of paying to chase new clicks."
+        },
+        {
+          "title": "No haggling at the counter",
+          "body": "Your rules answer for you — no back-and-forth, no negotiating, no training your staff to barter."
+        }
+      ]
+    },
+    "calcTeaser": {
+      "eyebrow": "Your numbers",
+      "title": "See what walk-outs cost you.",
+      "note": "Drag two sliders for a quick estimate of the sales you could win back each month.",
+      "resultLabel": "Sales you could recover / month",
+      "ctaLabel": "Open the full calculator",
+      "intelNote": "And as the sales come in, you start to see what your shoppers will actually pay."
+    },
+    "closingInvite": "New here? Bidygo is open to its first shops in new markets — yours could be one of them.",
+    "flowCredibility": "It's the kind of revenue discipline big chains have used for years — made simple enough for a single shop."
+  },
+  "forStoresPage": {
+    "eyebrow": "For shop owners",
+    "headline": "Recover walk-outs. Keep your shelf price.",
+    "subhead": "Get live offers from shoppers before they leave. Your dashboard rules decide what to accept, counter, or pass — automatically. Start with one shop — see what the real numbers look like in your category.",
+    "primaryCta": "Book a quick look",
+    "secondaryCta": "See how it works",
+    "badges": {
+      "approval": "100% approval control",
+      "fast": "Live in 14 days",
+      "pos": "Works with whatever you use today"
+    },
+    "problemEyebrow": "The problem with how shops price today",
+    "problemTitle": "Your shelf price is one number. Every shopper has a different one in their head.",
+    "problemNote": "And the gap between them is where your conversion rate dies.",
+    "todayBadge": "Today",
+    "todayTitle": "Blanket discount, lose your margin.",
+    "todayBody": "You run a sale. Every shopper gets the discount — including the ones who would have paid full price. Margin walks out the door alongside the deals.",
+    "todayBullets": [
+      "Discounts the wrong customers.",
+      "Trains shoppers to wait for sales.",
+      "Tells you nothing about price sensitivity."
+    ],
+    "withBidygoBadge": "With Bidygo",
+    "withBidygoTitle": "Talk to one shopper at a time, in seconds.",
+    "withBidygoBody": "Every offer is a 1:1 conversation. You see the shopper, the product, and a number they're ready to commit to right now. Approve the ones worth it. Counter the rest. Your shelf price stays the same.",
+    "withBidygoBullets": [
+      "Catch the shoppers who would have walked out.",
+      "Protect the shoppers who would have paid full price.",
+      "Learn what shoppers will pay for what, when."
+    ],
+    "flowEyebrow": "Your Bidygo dashboard",
+    "flowTitle": "Four moving parts. You stay in charge of all of them.",
+    "steps": [
+      {
+        "title": "Pick what to test",
+        "body": "Start with one shop and one category. We do the setup — no POS replacement, no upfront work."
+      },
+      {
+        "title": "Get live offers",
+        "body": "Offers land in your dashboard and on your phone. Filter by category, store, urgency."
+      },
+      {
+        "title": "Automatic answer in seconds",
+        "body": "Your dashboard rules send accept, counter, or pass. Shoppers get the answer without you tapping. You can step in on edge cases if you want."
+      },
+      {
+        "title": "Learn from every miss",
+        "body": "Even passed offers tell you something — what shoppers would have paid, when. Use it to reprice."
+      }
+    ],
+    "commercialEyebrow": "How we get paid",
+    "commercialTitle": "Two parts: a monthly subscription, plus a share of the sales Bidygo helps close.",
+    "commercialBody": "A monthly subscription scaled to your shop's size, plus 5% of the sales Bidygo brings in. Exact tier on the first message — no surprises on the call.",
+    "commercialCards": [
+      {
+        "title": "Start with one shop",
+        "body": "One shop, one category. You see what offers come in, what closes, and what new sales show up — before going wider."
+      },
+      {
+        "title": "Monthly subscription",
+        "body": "Three tiers, roughly $50 to $300 a month, scaled to your shop's size."
+      },
+      {
+        "title": "Plus a share of new sales",
+        "body": "5% of the sales Bidygo helps close — the part that scales with what we actually bring in."
+      }
+    ],
+    "commercialNote": "Early-shop terms change after the first cohort. Lock yours in now.",
+    "qsEyebrow": "Questions shop owners asked us",
+    "qsTitle": "Things you're right to ask first.",
+    "objections": [
+      {
+        "q": "We don't want customers controlling our prices.",
+        "a": "They don't. Your dashboard rules govern every response automatically, and your shelf price never moves. Bidygo is a private negotiation channel — not a customer-facing discount."
+      },
+      {
+        "q": "We already run sales and promotions.",
+        "a": "Promotions discount everyone, including the shoppers who'd have paid full price. Bidygo only converts the ones who were about to leave — the rest still pay your shelf price."
+      },
+      {
+        "q": "Our margins can't take more pressure.",
+        "a": "That's exactly the point. Floors, ceilings, and counter rules are yours — set once in the dashboard. Bidygo accepts only what fits your rules. Edge cases stay visible so you can adjust the rule, not the offer."
+      },
+      {
+        "q": "How fast can we go live?",
+        "a": "Two weeks in one store and one category. We don't replace your POS, we work alongside it. Staff training takes 90 minutes."
+      },
+      {
+        "q": "What if shoppers abuse this?",
+        "a": "Every shopper is identified, offer frequency is rate-limited, accept rates per user are tracked. Repeated lowballers stand out in the dashboard — adjust your rules or block them; no per-offer tapping needed."
+      },
+      {
+        "q": "How much does it cost?",
+        "a": "Two parts: a monthly subscription scaled to your shop's size — roughly $50 to $300 — and 5% of the sales Bidygo helps close. Exact tier on the first message."
+      }
+    ],
+    "demoEyebrow": "First shops",
+    "demoTitle": "Book a 20-minute quick look with our team.",
+    "demoBody": "We'll walk you through what you'd see day one, share what shops in your category are seeing, and scope what a 30-day trial looks like in your stores.",
+    "demoFeature1Title": "The shopkeeper's dashboard, live",
+    "demoFeature1Body": "Offers, approvals, sales lift — exactly what you'd see day one.",
+    "demoFeature2Title": "What shops in your category see",
+    "demoFeature2Body": "Real numbers from the early shops — under NDA on the call.",
+    "demoFeature3Title": "A trial that fits your shop",
+    "demoFeature3Body": "One shop, one category, 30 days — or wider if that fits.",
+    "preferChat": "Prefer a quick message? Write to us.",
+    "setup": {
+      "eyebrow": "What trying looks like",
+      "title": "Three weeks. Three small steps.",
+      "weeks": [
+        {
+          "label": "Week 1",
+          "title": "We learn how your shop works.",
+          "body": "We meet your team, look at your shelf, and pick a first category. You don't lift a finger."
+        },
+        {
+          "label": "Week 2",
+          "title": "Bidygo goes live with your first products.",
+          "body": "We turn on offers in one category. You watch the dashboard, tune the rules, and we read the numbers together."
+        },
+        {
+          "label": "Day 30",
+          "title": "You see the real numbers, then tune the rules.",
+          "body": "We sit down with what actually happened in your shop. No pressure — you choose what's next."
+        }
+      ]
+    }
+  },
+  "storiesPage": {
+    "eyebrow": "Stories",
+    "headline": "Real shops, in real time.",
+    "subhead": "We're running trials right now. As soon as the first shops publish their numbers — and sign off on doing so publicly — they'll be here.",
+    "badge": "First case studies expected Q3 2026",
+    "lensesEyebrow": "What you'll see when they launch",
+    "lensesTitle": "The four lenses every Bidygo case study uses.",
+    "lensesNote": "No hand-wavy 'increased engagement.' Real numbers, real methodology, real shop names.",
+    "lenses": [
+      {
+        "num": "01",
+        "title": "Conversion lift",
+        "body": "Pre vs. post Bidygo, on previously walk-out shoppers. Measured before/after the trial window."
+      },
+      {
+        "num": "02",
+        "title": "Margin protection",
+        "body": "Average accepted-offer margin vs. baseline shelf-price margin. Net contribution per shopper."
+      },
+      {
+        "num": "03",
+        "title": "Inventory velocity",
+        "body": "Days-to-sell for products in Bidygo vs. control group. Especially for aged and end-of-season stock."
+      },
+      {
+        "num": "04",
+        "title": "Operational impact",
+        "body": "Hours of staff time per offer, alert volume, training overhead. The setup cost is part of the case study, not hidden."
+      }
+    ],
+    "honestTitle": "Why aren't there case studies here yet?",
+    "honestPara1": "Honest answer: we're too early. Our first shops are mid-trial, and we don't publish anything without their sign-off. Putting unverified numbers on a marketing page is the easiest way to lose retailer trust.",
+    "honestPara2": "What we can share now: under NDA, on a partner call, the raw trial data. Book a quick look and we'll walk through what other electronics, fashion, or footwear shops are seeing — including the things that surprised us.",
+    "honestCta": "See trial data under NDA",
+    "notifyEyebrow": "Get notified",
+    "notifyHeadline": "We'll email you when the first case studies go live.",
+    "notifyBody": "No spam. One email when the data is published. Sign up in the footer or write to <email>hello@bidygo.com</email>.",
+    "applyTitle": "Be in the next group.",
+    "applyBody": "First shops work with us directly and get a co-authored case study at the end. Limited spots — closes when full.",
+    "applyCta": "Apply to join",
+    "infoCta": "See retailer info first",
+    "pulseEyebrow": "Pulse",
+    "pulseTitle": "What's happening on the floor right now",
+    "pulseNote": "A live ticker of recent offers across the shops on Bidygo, then a few stories behind the numbers.",
+    "pulseCaption": "Anonymized live feed — updates every few seconds."
+  },
+  "whyBidygoPage": {
+    "eyebrow": "Why Bidygo exists",
+    "headline": "Why shoppers walk out — and how Bidygo brings them back.",
+    "subhead": "Bidygo is the pricing layer for real shops. Shoppers scan a barcode, offer the price they would actually pay, and your dashboard rules answer in seconds. Walk-outs come back as buyers — without running a single discount.",
+    "primaryCta": "Talk to us",
+    "secondaryCta": "See the store side",
+    "momentEyebrow": "The walk-out moment",
+    "momentTitle": "The last two minutes before someone leaves.",
+    "momentBody1": "Step into any Yerevan electronics shop on a Saturday afternoon. The shopper finds the product. They like it. They pause at the price.",
+    "momentBody2": "They pull out their phone. They check three other shops. Sometimes they ask the staff for a better price. Most of the time, they just put the box down and walk out the door.",
+    "momentBody3": "Your shelf didn't change. Your stock didn't move. You don't know what they would have paid. You don't know which shop they walked to next. The data is gone the moment they cross the threshold.",
+    "truthEyebrow": "Why this keeps happening",
+    "truthTitle": "Three truths about how shoppers actually behave.",
+    "truthPoints": [
+      {
+        "title": "Shoppers don't all value the same price the same way.",
+        "body": "The same shoe at the same shelf price will close one shopper and lose another. Your shelf price is a compromise — not a match."
+      },
+      {
+        "title": "Asking out loud is awkward.",
+        "body": "Most shoppers won't haggle in front of staff. They'll smile, say they'll think about it, and leave. You never learn what number would have worked."
+      },
+      {
+        "title": "Coupons train people to wait.",
+        "body": "Public discounts give margin to people who would have paid full price — and teach everyone else to come back during the next sale. You lose twice."
+      }
+    ],
+    "bidygoEyebrow": "How Bidygo changes the moment",
+    "bidygoTitle": "The shopper offers. Bidygo answers. By your rules.",
+    "bidygoIntro": "No new app to download. No staff training. The shopper uses their phone, the way they already do.",
+    "bidygoSteps": [
+      {
+        "title": "Shopper scans the barcode on the shelf.",
+        "body": "They open Bidygo on their phone, scan the product, see the listed price — quietly, before they leave."
+      },
+      {
+        "title": "Shopper suggests the price they'd actually pay.",
+        "body": "Privately. No public discount. No awkward conversation with staff. One number, sent to your dashboard."
+      },
+      {
+        "title": "Bidygo answers automatically — by your dashboard rules.",
+        "body": "Your floors, ceilings, and counter rules run the response. Accept inside your rules. Counter from your rules. Decline anything below floor."
+      },
+      {
+        "title": "Shopper sees the answer in seconds.",
+        "body": "Accepted, countered, or rejected — clear, fast, on their phone. They decide to take the deal or walk."
+      },
+      {
+        "title": "Accepted offers show up at checkout.",
+        "body": "Shopper shows proof on their phone. Floor staff completes the sale at the agreed price. No new POS workflow on your side."
+      }
+    ],
+    "notDiscountEyebrow": "Why Bidygo isn't another discount tool",
+    "notDiscountTitle": "Three things make this different from a sale, a coupon, or a markdown.",
+    "notDiscountPoints": [
+      {
+        "title": "It's private — not public.",
+        "body": "No banner. No SALE sticker. No coupon code in your inbox. Your shelf price doesn't move. Only the shopper who asked sees the answer they got."
+      },
+      {
+        "title": "It's per-shopper — not blanket.",
+        "body": "Each conversation is one shopper, one product, one number. People who would have paid full price still pay full price."
+      },
+      {
+        "title": "Bidygo never accepts below your floor.",
+        "body": "You set the rules once in the dashboard — floors, ceilings, counter logic. Bidygo enforces them automatically. Nothing slips below."
+      }
+    ],
+    "storesGainEyebrow": "Why stores care",
+    "storesGainTitle": "What changes for your shop on the day Bidygo turns on.",
+    "storesGainPoints": [
+      {
+        "title": "Walk-outs come back as buyers.",
+        "body": "Shoppers who would have left now finish the sale — at a price your rules approved."
+      },
+      {
+        "title": "You learn what shoppers will actually pay.",
+        "body": "Every offer is a data point. Per product, per category, per shopper segment. You stop pricing in the dark."
+      },
+      {
+        "title": "You stay in control of margin.",
+        "body": "Floors, counter logic, and per-SKU rules are yours. The shelf price doesn't move. The brand doesn't drift toward discount."
+      }
+    ],
+    "founderEyebrow": "Why we started this",
+    "founderTitle": "We grew up in shops where the right answer was a conversation.",
+    "founderBody": "Bidygo started in Yerevan because we knew the shops here — and we kept watching the same walk-out. Modern retail forgot how to ask. We're building the quiet way back. — Vahagn Khachatryan",
+    "closeEyebrow": "Ready to see your side?",
+    "closeTitle": "Start a conversation. We'll show you what your numbers could look like.",
+    "closeBody": "20-minute call. We show the live dashboard, share what shops in your category are seeing, and walk through what your first trial could look like.",
+    "closePrimaryCta": "Talk to us",
+    "closeSecondaryCta": "See the store side",
+    "signature": "— Vahagn Khachatryan, Yerevan"
+  },
+  "solutionsPage": {
+    "bookDemoFor": "Book a demo for {category}",
+    "allRetailerInfo": "All retailer info",
+    "frictionEyebrow": "The category-specific friction",
+    "frictionTitle": "Where {category} retail conversion breaks today.",
+    "whyFailsEyebrow": "Why current methods fall short",
+    "whyFailsTitle": "The tools you already use weren't built for 1:1 negotiation.",
+    "howFitsEyebrow": "How Bidygo fits your category",
+    "howFitsTitle": "Made for the way your inventory actually moves.",
+    "outcomesEyebrow": "Outcomes — early benchmarks",
+    "outcomesTitle": "What {category} shops are seeing.",
+    "outcomesNote": "First-pilot numbers. We'll share the rest under NDA on the demo call.",
+    "faqEyebrow": "Common questions",
+    "faqTitle": "{category} shop FAQs.",
+    "readyEyebrow": "Ready to talk?",
+    "readyTitle": "Pilot Bidygo in your {category} shops in 14 days.",
+    "readyBody": "Start with one shop. Works with whatever till you use. We'll figure out the right plan together on the first message.",
+    "bookDemo": "Book your demo",
+    "readPlaybook": "Read the playbook",
+    "otherEyebrow": "Other categories",
+    "otherTitle": "Bidygo also serves",
+    "seeMore": "See more",
+    "breadcrumbHome": "Home",
+    "breadcrumbHub": "For shops"
+  },
+  "resourcesPage": {
+    "eyebrow": "Resources",
+    "headline": "The reading list we wish we'd had when we started Bidygo.",
+    "subhead": "Short reads on selling more in your shop. Written by shop owners and the Bidygo team.",
+    "featured": "Featured",
+    "min": "min",
+    "readEssay": "Read the essay",
+    "libraryEyebrow": "The full library",
+    "libraryTitle": "Essays & playbooks",
+    "readMore": "Read more",
+    "monthly": "More essays publishing monthly. Subscribe in the footer to get them in your inbox.",
+    "questionTitle": "Got a retail question we should write about?",
+    "questionBody": "We're building this library based on what shops ask us. Email <email>hello@bidygo.com</email> with your question — if it's a good one, it'll show up here.",
+    "talkInstead": "Talk to us instead"
+  },
+  "articlePage": {
+    "back": "Back to all resources",
+    "minRead": "{minutes} min read",
+    "tldr": "TL;DR",
+    "questionsTitle": "Questions readers ask",
+    "ctaTitle": "Want to talk about this for your shop?",
+    "ctaBody": "We help shops in electronics, fashion, footwear, beauty and home goods try Bidygo in 14 days.",
+    "ctaButton": "Talk to us about a pilot",
+    "relatedTitle": "Related reading",
+    "read": "Read"
+  },
+  "pricingPage": {
+    "eyebrow": "Pricing",
+    "headline": "What you pay (and what you don't).",
+    "subhead": "Two parts: a monthly subscription scaled to your shop's size, plus 5% of the sales Bidygo helps close. Exact tier on the first message.",
+    "placeholderNote": "The 5% applies to the sales Bidygo helps close. Your exact subscription tier — and what's in it — we'll walk through on the first message. — Vahagn Khachatryan",
+    "notSureTitle": "Not sure which fits?",
+    "notSureBody": "Tell us how many shops you have and what you sell. We'll point to the right one in one message.",
+    "messageUs": "Message us"
+  },
+  "founderPage": {
+    "greeting": "Hi, I'm {name}.",
+    "photoCaption": "Photo of {name} · placeholder",
+    "whyLink": "Why we built Bidygo"
+  },
+  "localeStub": {
+    "title": "We're translating this page.",
+    "body": "Our team is finishing the local-language version. We didn't want to show you half-translated text — that's not how we'd want a shop owner to read it.",
+    "subbody": "In the meantime, message us directly — we'd love to hear about your shop.",
+    "readInEnglish": "Read this page in English"
+  },
+  "nav": {
+    "forStores": "For Stores",
+    "whyBidygo": "Why Bidygo",
+    "yourNumbers": "Your Numbers",
+    "stories": "Stories",
+    "resources": "Resources",
+    "meetVahagn": "Meet Vahagn",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "talkToUs": "Talk to us",
+    "partners": "For shops",
+    "solutions": "Categories",
+    "solutionsItems": {
+      "electronics": "Electronics",
+      "fashion": "Fashion",
+      "footwear": "Footwear",
+      "beauty": "Beauty",
+      "homeGoods": "Home goods"
+    },
+    "caseStudies": "Stories",
+    "about": "About",
+    "glossary": "Glossary",
+    "bookDemo": "Book a demo",
+    "consumerApp": "Get the app"
+  },
+  "cta": {
+    "primary": "Bring Bidygo to your shop",
+    "secondary": "See how it works",
+    "demo": "Book a 20-min demo",
+    "downloadGuide": "Download the retailer guide",
+    "talkToSales": "Talk to our team"
+  },
+  "hero": {
+    "eyebrow": "For real shops, by shop people",
+    "headline": "Walk-outs become buyers.",
+    "subhead": "Every day, shoppers walk out without buying — and you never see it happen. Bidygo wins those sales back from the foot traffic you already have. No blanket discounts, no extra ad spend.",
+    "primaryCta": "Bring Bidygo to your shop",
+    "secondaryCta": "See how it works",
+    "trustline": "For physical shops — electronics, fashion, footwear, beauty, home goods. Wherever your shoppers walk in."
+  },
+  "footer": {
+    "tagline": "Built for shopkeepers. Made in Yerevan.",
+    "product": "Product",
+    "company": "Company",
+    "resources": "Resources",
+    "legal": "Legal",
+    "newsletter": "One short email a month",
+    "newsletterCopy": "Pricing trends. Real stories from real shops. No spam.",
+    "subscribe": "Subscribe",
+    "emailPlaceholder": "you@retailer.com",
+    "rights": "© {year} Bidygo. All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "cookies": "Cookies"
+  },
+  "priceItDemo": {
+    "liveDemo": "Live demo",
+    "tryAnother": "Try another",
+    "viewToggleAria": "Switch demo view",
+    "view": {
+      "shopper": "Shopper",
+      "retailer": "Shop owner"
+    },
+    "listPrice": "List price",
+    "yourOffer": "Your offer",
+    "savings": "Save {amount} ({pct}%)",
+    "sending": "Sending to the shop…",
+    "offerCta": "Offer {amount}",
+    "acceptedTitle": "Accepted by the shop",
+    "acceptedBody": "Show this at checkout. Take it home today. You saved {savings}.",
+    "tryDifferent": "Try a different offer →",
+    "counterTitle": "Counter: {amount}",
+    "counterBody": "The shop can't do that price — but they'll meet you here.",
+    "newOffer": "Make a new offer →",
+    "rejectedTitle": "Too low for the shop today",
+    "rejectedBody": "Try a higher offer — and you'll see where they'll meet you.",
+    "adjustOffer": "Adjust your offer →",
+    "footer": "Powered by Bidygo · Shop keeps full approval control",
+    "retailer": {
+      "incomingLabel": "Incoming offer",
+      "incomingTitle": "A shopper wants {product}",
+      "offerLabel": "Their offer",
+      "listLabel": "Your list",
+      "marginNote": "Solid offer · +{pct}%",
+      "accept": "Accept",
+      "counter": "Counter",
+      "pass": "Pass",
+      "acceptedTitle": "Sold",
+      "acceptedBody": "Customer has the proof on their phone. Ready when they reach checkout.",
+      "counteredTitle": "Countered at {amount}",
+      "counteredBody": "They'll see your counter on their phone in seconds.",
+      "passedTitle": "Passed on this one",
+      "passedBody": "No hard feelings — they're free to offer again tomorrow.",
+      "next": "Next offer →"
+    }
+  },
+  "offerTicker": {
+    "badge": "Pulse",
+    "live": "Live",
+    "timeAgo": "{minutes} min ago",
+    "shop": {
+      "electronics": "An electronics shop",
+      "fashion": "A fashion shop",
+      "footwear": "A footwear shop",
+      "beauty": "A beauty shop",
+      "homeGoods": "A home-goods shop"
+    },
+    "line": {
+      "accepted": "{shop} accepted {amount}",
+      "countered": "{shop} countered an {amount} offer",
+      "rejected": "{shop} passed on an {amount} offer"
+    }
+  },
+  "roiCalculator": {
+    "badge": "Your numbers",
+    "title": "How many shoppers leave your store empty-handed?",
+    "sub": "Move the sliders. See how many of them Bidygo could bring back.",
+    "visitorsLabel": "Monthly shoppers",
+    "visitorsHint": "Foot traffic + product views, per month",
+    "walkAwayLabel": "Walk out without buying",
+    "walkAwayHint": "Rough estimate — most shops are 60–85%",
+    "ticketLabel": "Average sale",
+    "ticketHint": "What a typical customer spends",
+    "legend": {
+      "buyers": "Buy today",
+      "recovered": "Bidygo brings back",
+      "lost": "Still walks out"
+    },
+    "output": {
+      "lostTitle": "Walk out each month",
+      "recoveredTitle": "Bidygo could bring back",
+      "salesTitle": "Extra sales / month"
+    },
+    "context": "That's roughly {count} extra closed sales — about one every {hours}h your shop is open.",
+    "disclaimer": "Conservative estimate: we assume Bidygo brings back ~8 out of every 100 walk-outs, at sale prices about 12% below list. Real numbers come from your first 30 days.",
+    "email": {
+      "label": "Want the full breakdown for your team?",
+      "placeholder": "you@retailer.com",
+      "button": "Send the PDF",
+      "sending": "Sending…",
+      "sent": "Sent — check your inbox in a minute.",
+      "finePrint": "One email. We don't send anything else."
+    }
+  },
+  "retailerFlow": {
+    "actor": {
+      "shopper": "Shopper",
+      "store": "Store",
+      "both": "Both"
+    },
+    "step1": "Shopper walks in",
+    "step2": "Scans the barcode",
+    "step3": "Offers a price",
+    "step4": "Bidygo answers automatically",
+    "step5": "Gets the answer",
+    "step6": "Show proof, take it home",
+    "caption": "From offer to answer in seconds."
+  }
+}

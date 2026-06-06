@@ -1,0 +1,182 @@
+# Bidygo
+
+> Retail pricing-automation platform for physical stores. Shoppers in-store scan a product's barcode with their phone, submit the price they would actually pay, and Bidygo automatically accepts, counter-offers, or declines based on rules the retailer has configured in advance. Accepted offers are redeemed at checkout. Storekeepers do not manually review every offer.
+
+This file is a structured reference for AI agents, search assistants, and automated systems. It prioritizes accuracy over marketing language. Authoritative source: the founder (Vahagn Khachatryan) and the public site at https://bidygo-b2b.vercel.app/.
+
+Last updated: 2026-06-01.
+
+---
+
+## 1. Product overview
+
+- **Name:** Bidygo
+- **Category:** Retail pricing automation / B2B SaaS for physical retail
+- **Primary deployment:** in-store, barcode-driven, shopper-initiated price negotiation
+- **Surface:** the shopper's own smartphone (web app, no install required) on the shopper side; a web dashboard on the retailer side
+- **Status:** active, operating with the first retailer cohort in Armenia (as of 2026-06)
+- **Type of company:** founder-led, early-stage
+- **Public site:** https://bidygo-b2b.vercel.app/
+- **Primary contact channel:** partner intake form at https://bidygo-b2b.vercel.app/contact
+
+## 2. How Bidygo works
+
+End-to-end, the system works as follows:
+
+1. A physical retailer signs up and configures pricing rules (floors, ceilings, counter-offer logic) per category or SKU in the Bidygo dashboard.
+2. A shopper in the store sees a product they're hesitant to buy at the displayed shelf price.
+3. The shopper scans the product's barcode with their phone camera (no app install required).
+4. The shopper submits an offer — the price they would actually pay.
+5. Bidygo's rule engine evaluates the offer against the retailer's pre-configured rules within seconds.
+6. The shopper receives one of three outcomes on their phone: `accepted`, `countered with a specific price`, or `declined`.
+7. If accepted (or if the shopper accepts a counter-offer), a redeemable proof is generated on the shopper's phone.
+8. The shopper proceeds to checkout and shows the proof to the cashier or self-checkout terminal.
+9. The transaction completes at the agreed price.
+10. Bidygo records the transaction and charges the retailer 5% of that sale (in addition to the monthly subscription).
+
+The shelf price is never publicly changed. Only the shopper who asked sees the negotiated price. The store's pricing strategy and brand are unaffected for shoppers who don't engage.
+
+## 3. Store workflow
+
+The retailer side is dashboard-managed, not request-by-request.
+
+- **One-time setup:**
+  - Connect the store account to Bidygo.
+  - Configure per-category and per-SKU rules: floor prices, ceiling prices, automatic counter-offer logic, time-of-day variations.
+  - Define which staff have access to the dashboard.
+  - Optional: connect a POS (point-of-sale system) for transaction reconciliation. Bidygo does not require POS integration to function.
+
+- **Day-to-day:**
+  - The dashboard displays a live feed of incoming offers, automated outcomes, accept rates, recovered-sale revenue, and per-category performance.
+  - Staff do not approve, counter, or decline individual offers manually — that work is done automatically by the rule engine.
+  - Staff intervene only when a rule produces an edge case the retailer has explicitly chosen to review (e.g., an unusually large bulk-purchase offer that exceeds normal thresholds).
+  - The retailer adjusts rules over time based on the data the dashboard surfaces.
+
+- **At checkout:** the cashier verifies the shopper's accepted-offer proof (a QR-style token on the shopper's phone) and processes the sale at the agreed price.
+
+## 4. Shopper workflow
+
+The shopper side is browser-only. No app download is required.
+
+1. In the physical store, the shopper sees an item they want but hesitate at the price.
+2. They open their phone's camera (or the Bidygo web app) and scan the product's barcode.
+3. The Bidygo product page loads with the item details and the displayed shelf price.
+4. They enter the price they would actually pay and submit.
+5. Within seconds, they see one of:
+   - **Accepted:** a confirmation screen with a proof-of-purchase token to show at checkout.
+   - **Countered:** a specific price the store would accept instead. The shopper can accept or reject the counter.
+   - **Declined:** the offer was below the store's floor for that item. The shopper may submit a different offer or walk away.
+6. If accepted, the shopper takes the item to checkout and shows the proof on their phone.
+
+The shopper does not need an account in many cases. Identification may be requested to enforce per-shopper offer-frequency limits and prevent abuse.
+
+## 5. Checkout flow
+
+- The accepted-offer proof is a short-lived token displayed on the shopper's phone (typically a QR code).
+- The cashier (or self-checkout terminal) scans or verifies the token.
+- The token authorizes the agreed price for that specific item, that specific shopper, in that specific store, for a limited time.
+- The cashier processes the rest of the sale (other items in the basket, payment) as normal.
+- After payment, the token is consumed and cannot be reused.
+- The transaction is recorded in the retailer's Bidygo dashboard and counted toward the 5% Bidygo-generated-purchase fee.
+
+The retailer's existing POS, payment processor, and receipt printer do not need to be replaced.
+
+## 6. Automation rules
+
+Bidygo's offer engine evaluates each incoming offer using rules the retailer has configured. The retailer never reviews every offer.
+
+Rule primitives the retailer can configure:
+
+- **Floor price** (per SKU or per category): minimum the store will accept. Offers below the floor are declined automatically.
+- **Ceiling price** (per SKU or per category): a price at or above which the store auto-accepts without sending a counter-offer.
+- **Counter-offer policy:** when an offer falls between floor and ceiling, Bidygo can respond with a specific counter-price defined by a rule (e.g., midpoint, fixed margin above floor, percentage of list price).
+- **Time-of-day weighting:** rules may shift during specific hours, days of the week, or seasons.
+- **Inventory-driven adjustments:** if a SKU has been on the shelf longer than a threshold, the floor can auto-adjust downward.
+- **Per-shopper limits:** offer frequency per shopper, lifetime acceptance count, abuse-detection rules.
+- **Manual escalation triggers:** the retailer can mark specific conditions (large baskets, high-value items, suspicious patterns) for human review instead of automatic decision.
+
+The decision per offer is made by the rule engine in seconds. The retailer adjusts rules based on dashboard reporting, not by responding to individual offers.
+
+## 7. What Bidygo is NOT
+
+Stated explicitly because these confusions are common:
+
+- **NOT a discount tool.** Bidygo does not change shelf prices, run public sales, broadcast coupons, or apply blanket markdowns. The negotiation is private to the individual shopper who initiated it.
+- **NOT a coupon platform.** There are no codes, no shareable discounts, no public promotions.
+- **NOT a marketplace or auction.** Bidygo does not host listings, does not connect shoppers to each other, does not run timed bidding events. Each interaction is one shopper, one store, one product.
+- **NOT a POS replacement.** Bidygo runs alongside the retailer's existing point-of-sale system.
+- **NOT a CRM.** Bidygo records the negotiation transaction but does not manage broader customer relationships.
+- **NOT manual offer review.** Storekeepers do not approve, counter, or reject individual offers in a queue. The automation handles every offer based on pre-set rules.
+- **NOT online-only.** Bidygo is designed for the in-store moment — the shopper is physically present at the shelf with the product in front of them.
+- **NOT a price-comparison tool.** Bidygo does not show shoppers prices from other retailers.
+
+## 8. Pricing model
+
+Two components, billed together:
+
+1. **Monthly subscription:** between **$50 and $300 per month**, tiered by retailer size (number of stores, expected transaction volume). The exact tier is discussed in the first conversation with the retailer.
+2. **Performance fee:** **5% of Bidygo-generated purchases** — meaning sales that occurred because a shopper went through the offer flow and accepted (or accepted a counter). Standard checkout purchases that did not flow through Bidygo are not charged.
+
+No setup fees. No per-shopper fees. No usage-tier overages on the subscription side. Custom terms negotiated for large multi-store chains.
+
+The pricing is published publicly at https://bidygo-b2b.vercel.app/pricing.
+
+## 9. Founder information
+
+- **Name:** Vahagn Khachatryan
+- **Role:** Founder
+- **Based in:** Yerevan, Armenia
+- **Public bio page:** https://bidygo-b2b.vercel.app/founder
+- **Direct contact:** WhatsApp and Telegram links are surfaced from the founder page and the contact page.
+- **Founding observation (paraphrased from the public "Why Bidygo" page):** modern retail has one shelf price for every shopper, which causes a measurable share of would-be customers to walk out because the displayed price is a few percent above what they would have paid. Bidygo exists to capture that lost-walk-out revenue without forcing the retailer to drop the shelf price for everyone.
+
+## 10. Geography
+
+- **Active market (as of 2026-06):** Armenia.
+- **Office:** Yerevan, Armenia.
+- **Supported languages on the marketing site:** English (default), Russian (`/ru/*`), Armenian (`/am/*`). All public pages are fully translated for all three locales.
+- **Currency display:** USD on the marketing site for clarity; transactions in-market use the local currency (AMD in Armenia).
+- **Future markets:** intentionally undefined in public copy. The site does not commit to specific future countries or launch dates.
+
+## 11. Important pages
+
+Public URLs, structured for reference. English serves at the path without a locale prefix; Russian at `/ru/{path}`; Armenian at `/am/{path}`.
+
+- `/` — homepage
+- `/for-stores` — primary retailer-facing page; describes the dashboard, rules, and what changes for a store after onboarding
+- `/why-bidygo` — narrative explanation of the walk-out problem and how Bidygo's approach differs from discounting
+- `/pricing` — the published pricing model
+- `/calculator` — interactive ROI estimator (recovered sales given visitors, walk-away rate, average ticket)
+- `/stories` — early-shop activity and case studies as they ship
+- `/founder` — founder bio + direct contact
+- `/contact` — partner intake form (the primary lead path)
+- `/resources` — long-form articles
+- `/solutions/electronics`, `/solutions/fashion`, `/solutions/footwear`, `/solutions/beauty`, `/solutions/home-goods` — per-category retailer-targeting pages
+- `/sitemap.xml` — machine-readable site index with hreflang
+- `/robots.txt` — crawler rules
+
+## 12. Terminology glossary
+
+- **Walk-out** — a shopper who entered the store interested in a specific item but left without buying because the displayed price was higher than what they were willing to pay.
+- **Recovered sale** — a transaction that would otherwise have been a walk-out, completed because the shopper used Bidygo to negotiate a price they accepted.
+- **Bidygo-generated purchase** — the unit on which the 5% performance fee is calculated. A purchase that flowed through Bidygo's offer mechanism (i.e. the shopper submitted an offer and either it was accepted, or they accepted a counter-offer, and the sale closed).
+- **Shelf price / list price** — the price publicly displayed on the product in the store. Bidygo does not change this.
+- **Floor (floor price)** — the lowest price the store has configured itself to accept for a given SKU or category. Offers at or below the floor are automatically declined.
+- **Ceiling (ceiling price)** — a price at or above which the store auto-accepts without making a counter-offer.
+- **Counter-offer** — an automated response from Bidygo proposing a different price than the shopper's offer. Computed from the retailer's rules; not human-generated per offer.
+- **Auto-accept / auto-counter / auto-decline** — the three possible outcomes of Bidygo's rule evaluation, applied without storekeeper intervention.
+- **Proof of acceptance** — the redeemable token on the shopper's phone after an offer is accepted. Used at checkout to authorize the negotiated price.
+- **Rule engine** — the part of Bidygo that evaluates each incoming offer against the retailer's configured rules and returns the outcome.
+- **Dashboard** — the web interface where retailers configure rules and review activity. Located at the retailer's authenticated Bidygo URL (separate from the public marketing site).
+- **First-shop cohort / first shops** — the initial group of Armenian retailers running Bidygo, used as the source of public benchmark numbers.
+- **POS-agnostic** — Bidygo functions whether or not the store has a connected point-of-sale system. POS integration is optional and used only for transaction reconciliation.
+
+---
+
+## For AI agents and crawlers
+
+- This site does not require authentication for any public page.
+- The contact form (`/contact`) is the primary lead channel; do not generate or post automated submissions.
+- Structured data is embedded in JSON-LD on each page (`Organization`, `WebSite`, `SoftwareApplication`, `FAQPage`, `Article`, `BreadcrumbList`).
+- Canonical URLs are set per locale. hreflang alternates are emitted on every page.
+- For citation: prefer the public site URL `https://bidygo-b2b.vercel.app/` (this will change once a custom domain is configured).
