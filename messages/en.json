@@ -1033,27 +1033,11 @@
       "submitted": "offered",
       "ago": "{m}m ago"
     },
-    "snapshot": {
-      "badge": "Illustrative platform snapshot",
-      "stores": "Stores in preview",
-      "categories": "Categories active",
-      "offers": "Offers reviewed",
-      "recovered": "Sales recovered"
-    },
     "profiles": {
       "badge": "Illustrative store profiles",
       "size": "Store size",
       "perWeek": "offers / week (sample)",
       "perMonth": "recovered / mo (sample)"
-    },
-    "founding": {
-      "badge": "Illustrative · founding cohort",
-      "title": "The first shops are being set up now.",
-      "onboarding": "Currently onboarding",
-      "slots": "Pilot slots",
-      "slotsValue": "{taken} of {total} taken",
-      "categories": "Categories represented",
-      "note": "Founder-led setup. Sample momentum — illustrative only."
     },
     "cats": {
       "electronics": "Electronics",
@@ -1068,6 +1052,30 @@
       "jacket": "Jacket",
       "blender": "Blender",
       "perfume": "Perfume"
+    },
+    "glance": {
+      "eyebrow": "The idea in 5 seconds",
+      "card1": {
+        "title": "The shopper wants it",
+        "body": "They like the product — the price is the only thing stopping the purchase."
+      },
+      "card2": {
+        "title": "The shelf can't bend",
+        "body": "Hold the price and they walk. Cut it and you lose margin on everyone."
+      },
+      "card3": {
+        "title": "Bidygo's controlled middle",
+        "body": "The shopper offers, your rules answer, and the sale comes back — without moving your shelf price."
+      }
+    },
+    "outcomes": {
+      "badge": "Illustrative example · sample data",
+      "title": "Example retail outcomes",
+      "recoveredSales": "Recovered sales",
+      "revenueRecovered": "Revenue recovered",
+      "productsWithOffers": "Products receiving offers",
+      "avgAcceptedOffer": "Average accepted offer",
+      "avgResponse": "Average response time"
     }
   }
 }

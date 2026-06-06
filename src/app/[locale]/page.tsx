@@ -33,12 +33,11 @@ import { ProofStats, type ProofMetric } from "@/components/sections/proof-stats"
 import { RetailerFlowDemo } from "@/components/sections/retailer-flow-demo";
 import { CalculatorTeaser } from "@/components/sections/calculator-teaser";
 import {
+  HowItWorksGlance,
   RecoveredSaleAnatomy,
   PreviewDashboard,
-  ActivityFeed,
-  MarketplaceSnapshot,
+  ExampleRetailOutcomes,
   StoreProfiles,
-  FoundingCohort,
 } from "@/components/sections/product-preview";
 import { MomentCard } from "@/components/content/moment-card";
 import { getMoments } from "@/data/moments";
@@ -187,6 +186,11 @@ export default async function HomePage({
         </Container>
       </section>
 
+      {/* ===================== HOW IT WORKS IN 5 SECONDS — understanding, before proof ===================== */}
+      <Section tone="default">
+        <HowItWorksGlance />
+      </Section>
+
       {/* ===================== 2 · PROOF — real + safe, NO invented numbers ===================== */}
       <Section tone="muted">
         <SectionHeader
@@ -220,10 +224,9 @@ export default async function HomePage({
           disclaimer={proof.disclaimer}
         />
 
-        {/* Product Preview — illustrative momentum (sample data) */}
-        <ScrollReveal className="mt-14 grid lg:grid-cols-2 gap-5 items-start">
-          <MarketplaceSnapshot />
-          <ActivityFeed />
+        {/* Example retail outcomes — illustrative outcome numbers (sample data) */}
+        <ScrollReveal className="mt-14">
+          <ExampleRetailOutcomes />
         </ScrollReveal>
       </Section>
 
@@ -416,13 +419,6 @@ export default async function HomePage({
       {/* ===================== 7 · CALCULATOR TEASER — opportunity + secondary pricing intelligence ===================== */}
       <Section tone="muted">
         <CalculatorTeaser />
-      </Section>
-
-      {/* ===================== PRODUCT PREVIEW · founding momentum (sample data) ===================== */}
-      <Section tone="cream">
-        <ScrollReveal>
-          <FoundingCohort />
-        </ScrollReveal>
       </Section>
 
       {/* ===================== 8 · CONTACT CTA — with early-market invitation ===================== */}
