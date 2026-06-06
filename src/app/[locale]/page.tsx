@@ -18,22 +18,23 @@ import {
   ShieldCheck,
   UserRound,
   Quote,
-  Star,
+  MapPin,
+  TrendingUp,
 } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
-import { Section, SectionHeader, Container, Badge } from "@/components/ui/primitives";
+import { Section, SectionHeader, Container, Badge, Card } from "@/components/ui/primitives";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { cn } from "@/lib/utils";
 import { OfferTicker } from "@/components/sections/offer-ticker";
 import { CalculatorTeaser } from "@/components/sections/calculator-teaser";
+import { RetailerFlowDemo } from "@/components/sections/retailer-flow-demo";
 import {
   RecoveredSaleAnatomy,
   PreviewDashboard,
   ExampleRetailOutcomes,
-  StoreProfiles,
 } from "@/components/sections/product-preview";
-import { MomentCard } from "@/components/content/moment-card";
 import { getMoments } from "@/data/moments";
 import { getFounder } from "@/data/founder";
 
@@ -178,7 +179,8 @@ export default async function HomePage({
         </ScrollReveal>
       </Section>
 
-      {/* ===================== 3 · ILLUSTRATIVE RETAIL OUTCOMES — the value, in numbers (Why care) ===================== */}
+      {/* ===================== 3 · ILLUSTRATIVE RETAIL OUTCOMES — the value, in numbers (Why care) =====================
+          Numbers demonstrate RETAILER OUTCOMES, never platform scale. All sample/illustrative. */}
       <Section tone="cream">
         <SectionHeader
           eyebrow={t("numbers.eyebrow")}
@@ -191,54 +193,85 @@ export default async function HomePage({
       </Section>
 
       {/* ===================== 4 · TESTIMONIALS / REAL SHOPS — the trust bridge (Why trust) =====================
-          Deliberately the most prominent block on the page, placed right after the numbers.
-          Locations live HERE (and in case studies) — never in the Product Preview layer. */}
+          The most prominent block on the page, immediately after the numbers. Bespoke quote/testimonial
+          layout (NOT generic preview cards). Locations live HERE only — never in the Product Preview layer. */}
       <Section tone="default" id="trust" className="relative overflow-hidden py-24 sm:py-32">
         <div aria-hidden className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-mesh-warm opacity-70" />
-          <div className="absolute top-[-20%] right-[-10%] size-[55vmax] rounded-full bg-[radial-gradient(closest-side,oklch(0.700_0.196_42/0.16),transparent)] blur-3xl" />
+          <div className="absolute inset-0 bg-mesh-warm" />
+          <div className="absolute top-[-18%] right-[-8%] size-[55vmax] rounded-full bg-[radial-gradient(closest-side,oklch(0.700_0.196_42/0.18),transparent)] blur-3xl" />
+          <div className="absolute bottom-[-20%] left-[-10%] size-[45vmax] rounded-full bg-[radial-gradient(closest-side,oklch(0.62_0.13_165/0.10),transparent)] blur-3xl" />
         </div>
 
         <Container>
           <div className="text-center max-w-2xl mx-auto">
-            <div className="inline-flex items-center gap-1.5 mb-5">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="size-4 fill-brand-500 text-brand-500" />
-              ))}
-            </div>
-            <span className="eyebrow justify-center">{t("momentsEyebrow")}</span>
-            <h2 className="display-2 mt-4 text-pretty">{t("momentsTitle")}</h2>
+            <span className="inline-flex items-center gap-2 rounded-pill bg-white/70 backdrop-blur border border-ink-900/[0.06] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-brand-700 shadow-sm">
+              <span className="relative inline-flex size-2">
+                <span className="absolute inset-0 rounded-full bg-brand-500/50 animate-ping" />
+                <span className="relative inline-flex size-2 rounded-full bg-brand-500" />
+              </span>
+              {t("momentsEyebrow")}
+            </span>
+            <h2 className="display-2 mt-5 text-pretty">{t("momentsTitle")}</h2>
             <p className="mt-5 text-lg text-ink-700 leading-relaxed text-pretty">{t("momentsBody")}</p>
           </div>
 
+          {/* Quote-card grid — unmistakably testimonials: quote glyph, blockquote, outcome chip, attribution */}
           <ScrollReveal
-            className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5"
-            staggerChildren={70}
+            className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch"
+            staggerChildren={80}
           >
             {momentItems.map((m) => (
-              <MomentCard key={m.id} moment={m} />
+              <figure
+                key={m.id}
+                className="relative flex flex-col h-full rounded-[1.75rem] bg-white border border-ink-900/[0.06] shadow-[0_20px_50px_-26px_oklch(0.155_0.018_36/0.28)] p-6 transition-transform duration-300 hover:-translate-y-1"
+              >
+                <Quote aria-hidden className="size-9 text-brand-500/25 -scale-x-100" />
+                <div className="mt-1 text-[0.65rem] uppercase tracking-[0.12em] font-bold text-brand-700">
+                  {m.vertical}
+                </div>
+                <blockquote className="mt-2 text-ink-800 leading-relaxed text-[0.95rem] flex-1">
+                  {m.story}
+                </blockquote>
+                <div className="mt-4 flex items-start gap-2 rounded-2xl bg-mint-500/10 border border-mint-500/20 px-4 py-3">
+                  <TrendingUp className="size-4 text-[oklch(0.45_0.12_165)] shrink-0 mt-0.5" aria-hidden />
+                  <span className="text-sm font-semibold text-ink-900 leading-snug">{m.metric}</span>
+                </div>
+                <figcaption className="mt-5 pt-4 border-t border-ink-900/[0.06] flex items-center gap-3">
+                  <div className={cn("size-11 rounded-full grid place-items-center text-xl shrink-0", m.bg)}>
+                    {m.emoji}
+                  </div>
+                  <div className="min-w-0">
+                    <div className="font-bold text-ink-900 leading-tight">{m.name}</div>
+                    <div className="inline-flex items-center gap-1 text-xs text-ink-500 mt-0.5">
+                      <MapPin className="size-3.5" aria-hidden />
+                      {m.city}
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
             ))}
           </ScrollReveal>
 
           {/* Featured founder testimonial — the human behind the trust */}
-          <ScrollReveal className="mt-12">
-            <div className="relative mx-auto max-w-3xl rounded-[2rem] bg-white border border-ink-900/[0.07] shadow-[0_24px_60px_-28px_oklch(0.155_0.018_36/0.28)] p-8 sm:p-12 overflow-hidden">
-              <Quote aria-hidden className="absolute -top-3 -left-2 size-24 text-brand-500/10 rotate-180" />
+          <ScrollReveal className="mt-10">
+            <figure className="relative mx-auto max-w-3xl rounded-[2rem] bg-cocoa-700 text-white shadow-[0_28px_70px_-30px_oklch(0.155_0.018_36/0.5)] p-8 sm:p-12 overflow-hidden">
+              <Quote aria-hidden className="absolute -top-2 left-6 size-24 text-white/10 -scale-x-100" />
+              <div aria-hidden className="absolute -right-16 -bottom-16 size-60 rounded-full bg-brand-500/20 blur-3xl" />
               <div className="relative flex flex-col items-center text-center gap-6">
-                <p className="font-[family-name:var(--font-signature)] text-3xl sm:text-4xl text-ink-900 leading-snug text-balance">
+                <p className="font-[family-name:var(--font-signature)] text-3xl sm:text-4xl leading-snug text-balance">
                   &ldquo;{t("trust.founderQuote")}&rdquo;
                 </p>
-                <div className="flex items-center gap-3">
-                  <div className="size-12 rounded-full bg-brand-500/15 grid place-items-center text-brand-700 font-bold text-lg shrink-0">
+                <figcaption className="flex items-center gap-3">
+                  <div className="size-12 rounded-full bg-brand-500 grid place-items-center text-white font-bold text-lg shrink-0">
                     {founder?.name.charAt(0) ?? "V"}
                   </div>
                   <div className="text-left">
-                    <div className="font-semibold text-ink-900">{founder?.name ?? "Vahagn Khachatryan"}</div>
-                    <div className="text-sm text-ink-500">{t("trust.founderRole")}</div>
+                    <div className="font-semibold">{founder?.name ?? "Vahagn Khachatryan"}</div>
+                    <div className="text-sm text-white/70">{t("trust.founderRole")}</div>
                   </div>
-                </div>
+                </figcaption>
               </div>
-            </div>
+            </figure>
           </ScrollReveal>
 
           <p className="mt-10 text-center text-sm text-ink-500 max-w-md mx-auto leading-relaxed">
@@ -255,8 +288,8 @@ export default async function HomePage({
         </Container>
       </Section>
 
-      {/* ===================== 5 · EXPLORE THE PRODUCT — Dashboard + Store profiles (How it works) =====================
-          Deeper product content lives AFTER the trust bridge. Sample data, geography-free. */}
+      {/* ===================== 5 · DASHBOARD PREVIEW — see the product (How it works) =====================
+          Product-preview = understanding, not trust. Sample data, geography-free. */}
       <Section tone="muted">
         <SectionHeader
           eyebrow={t("explore.eyebrow")}
@@ -266,17 +299,88 @@ export default async function HomePage({
         <ScrollReveal className="mt-12">
           <PreviewDashboard />
         </ScrollReveal>
-        <ScrollReveal className="mt-12">
-          <StoreProfiles />
+      </Section>
+
+      {/* ===================== 6 · WHAT CHANGES IN YOUR SHOP — the mechanism (How it works) ===================== */}
+      <Section tone="default">
+        <SectionHeader
+          eyebrow={t("flowEyebrow")}
+          title={t("flowTitle")}
+          description={t("flowNote")}
+        />
+        <div className="mt-14">
+          <RetailerFlowDemo />
+        </div>
+        <p className="mt-10 text-center text-sm text-ink-500 max-w-xl mx-auto leading-relaxed">
+          {t("flowCredibility")}
+        </p>
+        <div className="mt-10 flex justify-center">
+          <Link href="/for-stores">
+            <Button size="lg" variant="secondary">
+              {t("howCta")} <ArrowRight />
+            </Button>
+          </Link>
+        </div>
+      </Section>
+
+      {/* ===================== 7 · INDUSTRIES — category-fit qualification (Why care) ===================== */}
+      <Section tone="cream">
+        <SectionHeader
+          eyebrow={t("industriesEyebrow")}
+          title={t("industriesTitle")}
+          description={t("industriesNote")}
+        />
+        <ScrollReveal
+          className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
+          staggerChildren={80}
+        >
+          {industriesGrid.map((ind, i) => (
+            <Link
+              key={ind.slug}
+              href={ind.slug === "all" ? "/for-stores" : `/solutions/${ind.slug}`}
+              className="group h-full"
+            >
+              <Card interactive className="relative overflow-hidden h-full flex flex-col">
+                <span
+                  aria-hidden
+                  className="absolute top-2 left-4 font-display font-black text-[5.5rem] leading-none text-white/30 tabular-nums select-none mix-blend-overlay pointer-events-none z-[1]"
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div
+                  className={`relative h-44 ${ind.bg} grid place-items-center text-6xl transition-transform duration-500 group-hover:scale-[1.05] overflow-hidden`}
+                >
+                  <span className="relative z-[2] transition-transform duration-500 group-hover:scale-110">
+                    {ind.emoji}
+                  </span>
+                  <div
+                    aria-hidden
+                    className="absolute bottom-0 inset-x-0 h-3 bg-barcode opacity-30 [mask-image:linear-gradient(to_right,transparent,#000_20%,#000_80%,transparent)]"
+                  />
+                  <div
+                    aria-hidden
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(60%_60%_at_50%_50%,oklch(1_0_0/0.20),transparent)]"
+                  />
+                </div>
+                <div className="relative p-6 flex flex-col gap-2 flex-1">
+                  <h3 className="text-xl font-bold tracking-tight">{ind.name}</h3>
+                  <p className="text-ink-600 leading-relaxed flex-1">{ind.tagline}</p>
+                  <span className="inline-flex items-center gap-1.5 text-brand-700 font-semibold text-sm mt-3 group-hover:gap-2 transition-all">
+                    {t("industriesCta")} <ArrowRight className="size-4" />
+                  </span>
+                </div>
+              </Card>
+            </Link>
+          ))}
         </ScrollReveal>
       </Section>
 
-      {/* ===================== 6 · CALCULATOR — your own numbers (Why care) ===================== */}
-      <Section tone="cream">
+      {/* ===================== 8 · CALCULATOR TEASER — your own numbers (Why care) ===================== */}
+      <Section tone="muted">
         <CalculatorTeaser />
       </Section>
 
-      {/* ===================== 7 · CONTACT — with decision-point reassurance (Why trust → conversion) ===================== */}
+      {/* ===================== 9 · CONTACT — with decision-point reassurance (Why trust → conversion) ===================== */}
       <Section tone="default" noContainer className="py-24 sm:py-32">
         <Container>
           {/* Slim "safe to try" reassurance row — objection handling at the decision point */}
