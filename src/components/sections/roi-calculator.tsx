@@ -178,7 +178,8 @@ export function RoiCalculator({ className }: { className?: string }) {
             </div>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-3">
+          {/* 1 : 1 : 2 columns — the headline "extra sales" number gets the room for 6–7 digits */}
+          <div className="grid sm:grid-cols-4 gap-3">
             <OutputCard
               label={t("output.lostTitle")}
               value={intFmt.format(lost)}
@@ -192,6 +193,8 @@ export function RoiCalculator({ className }: { className?: string }) {
               label={t("output.salesTitle")}
               value={`+${fmt.format(additional)}`}
               highlight
+              className="sm:col-span-2"
+              valueClassName="sm:text-4xl"
             />
           </div>
 
@@ -241,16 +244,21 @@ function OutputCard({
   label,
   value,
   highlight,
+  className,
+  valueClassName,
 }: {
   label: string;
   value: string;
   highlight?: boolean;
+  className?: string;
+  valueClassName?: string;
 }) {
   return (
     <div
       className={cn(
         "rounded-2xl p-4 sm:p-5 border",
-        highlight ? "bg-brand-500/8 border-brand-500/25" : "bg-cream-100 border-ink-900/5"
+        highlight ? "bg-brand-500/8 border-brand-500/25" : "bg-cream-100 border-ink-900/5",
+        className
       )}
     >
       <div className="text-[0.7rem] uppercase tracking-wider font-bold text-ink-500 mb-1 leading-snug">
@@ -262,8 +270,9 @@ function OutputCard({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
         className={cn(
-          "font-display text-2xl sm:text-3xl font-bold tracking-tight tabular-nums",
-          highlight ? "text-brand-700" : "text-ink-900"
+          "font-display text-2xl sm:text-3xl font-bold tracking-tight tabular-nums leading-tight break-words",
+          highlight ? "text-brand-700" : "text-ink-900",
+          valueClassName
         )}
       >
         {value}
