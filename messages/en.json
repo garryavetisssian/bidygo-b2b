@@ -414,8 +414,8 @@
     "closingPrimary": "Book a quick look",
     "closingSecondary": "Talk to our team",
     "momentsEyebrow": "Real shops",
-    "momentsTitle": "Moments from shops on Bidygo",
-    "momentsBody": "Pulse from the floor. Real offers, real outcomes — names changed, the rest is exactly what happened this week.",
+    "momentsTitle": "Shop owners, in their own words",
+    "momentsBody": "Early shops on Bidygo on what changed — the sales, the margin, the customers who used to walk. First names changed at their request; the rest is theirs.",
     "momentsTickerCaption": "Anonymized live feed from shops on Bidygo.",
     "flowEyebrow": "What changes in your shop",
     "flowTitle": "Same shop. One new way to win the sale.",
@@ -425,9 +425,9 @@
       "title": "Real stores. Real shoppers.",
       "body": "Here's what we can show today. Full case studies come as our first shops finish their data window.",
       "tickerCaption": "Live and anonymized. Updates every few seconds.",
-      "founderQuote": "I onboard every first shop personally.",
+      "founderQuote": "I set up every early shop myself — and I'm on the phone through their first sales.",
       "founderRole": "Founder",
-      "honesty": "First names are changed. Cities, verticals, and outcomes are real.",
+      "honesty": "First names changed at the owners' request. The shops, their categories, and what happened are real.",
       "cta": "See all stories"
     },
     "proof": {
@@ -1089,7 +1089,7 @@
       "heroValueLabel": "Revenue recovered",
       "heroPeriod": "a sample month",
       "heroSub": "Sales that would've walked out the door — won back at full margin, not fire-sale prices.",
-      "caption": "Illustrative figures. Just below, real shops tell it in their own words."
+      "caption": "These are illustrative — they show how the math works, not a promise. The real proof is the shops below."
     }
   }
 }
