@@ -26,8 +26,9 @@ import { Link } from "@/i18n/navigation";
 import { Section, SectionHeader, Container, Badge, Card } from "@/components/ui/primitives";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { iconForEmoji } from "@/lib/visual-icons";
+import { imageForEmoji } from "@/lib/visual-icons";
 import { OfferTicker } from "@/components/sections/offer-ticker";
 import { CalculatorTeaser } from "@/components/sections/calculator-teaser";
 import { RetailerFlowDemo } from "@/components/sections/retailer-flow-demo";
@@ -238,11 +239,8 @@ export default async function HomePage({
                 <span className="text-[0.82rem] font-semibold text-ink-900 leading-snug">{m.metric}</span>
               </div>
               <figcaption className="mt-4 pt-3.5 border-t border-ink-900/[0.06] flex items-center gap-2.5">
-                <div className={cn("size-10 rounded-full grid place-items-center text-cocoa-700 shrink-0", m.bg)}>
-                  {(() => {
-                    const Icon = iconForEmoji(m.emoji);
-                    return <Icon className="size-5" strokeWidth={1.75} aria-hidden />;
-                  })()}
+                <div className={cn("size-10 rounded-full grid place-items-center font-bold text-cocoa-700 shrink-0", m.bg)}>
+                  {m.name.charAt(0)}
                 </div>
                 <div className="min-w-0">
                   <div className="font-bold text-ink-900 text-sm leading-tight">{m.name}</div>
@@ -350,15 +348,15 @@ export default async function HomePage({
                 >
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <div
-                  className={`relative h-40 ${ind.bg} grid place-items-center transition-transform duration-500 group-hover:scale-[1.05] overflow-hidden`}
-                >
-                  <span className="relative z-[2] text-cocoa-700 transition-transform duration-500 group-hover:scale-110">
-                    {(() => {
-                      const Icon = iconForEmoji(ind.emoji);
-                      return <Icon className="size-14" strokeWidth={1.5} aria-hidden />;
-                    })()}
-                  </span>
+                <div className="relative h-40 overflow-hidden">
+                  <Image
+                    src={imageForEmoji(ind.emoji)}
+                    alt=""
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                  />
+                  <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-cocoa-700/25 via-transparent to-transparent" />
                   <div
                     aria-hidden
                     className="absolute bottom-0 inset-x-0 h-3 bg-barcode opacity-30 [mask-image:linear-gradient(to_right,transparent,#000_20%,#000_80%,transparent)]"

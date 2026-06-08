@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { buildMetadata, buildPageGraph } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
+import Image from "next/image";
 import { ArrowRight, FileText, Lock, Bell, Sparkles, Activity, TrendingUp } from "lucide-react";
+import { imageForEmoji } from "@/lib/visual-icons";
 
 import { Link } from "@/i18n/navigation";
 import { Section, SectionHeader, Container, Card, Badge } from "@/components/ui/primitives";
@@ -219,8 +221,8 @@ export default async function StoriesPage({
                   aria-hidden
                   className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-500/30 to-honey-300/40 blur-3xl"
                 />
-                <div className="relative rounded-full bg-gradient-to-br from-cream-100 to-cream-200 size-56 grid place-items-center border border-ink-900/[0.06] shadow-elevated">
-                  <TrendingUp className="size-24 text-brand-600" strokeWidth={1.5} aria-hidden />
+                <div className="relative rounded-full size-56 overflow-hidden border border-ink-900/[0.06] shadow-elevated">
+                  <Image src={imageForEmoji("📈")} alt="" fill sizes="224px" className="object-cover" />
                 </div>
               </div>
             </ScrollReveal>

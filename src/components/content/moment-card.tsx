@@ -1,15 +1,21 @@
+import Image from "next/image";
 import { MapPin } from "lucide-react";
 import { Card } from "@/components/ui/primitives";
 import { cn } from "@/lib/utils";
-import { iconForEmoji } from "@/lib/visual-icons";
+import { imageForEmoji } from "@/lib/visual-icons";
 import type { Moment } from "@/data/moments";
 
 export function MomentCard({ moment, className }: { moment: Moment; className?: string }) {
-  const Icon = iconForEmoji(moment.emoji);
   return (
     <Card className={cn("p-0 overflow-hidden flex flex-col h-full", className)}>
-      <div className={cn("h-32 grid place-items-center", moment.bg)}>
-        <Icon className="size-12 text-cocoa-700" strokeWidth={1.75} aria-hidden />
+      <div className={cn("relative h-36 overflow-hidden", moment.bg)}>
+        <Image
+          src={imageForEmoji(moment.emoji)}
+          alt=""
+          fill
+          sizes="(max-width: 640px) 100vw, 25vw"
+          className="object-cover"
+        />
       </div>
       <div className="p-6 flex flex-col gap-3 flex-1">
         <div className="flex items-center justify-between gap-3 text-xs">

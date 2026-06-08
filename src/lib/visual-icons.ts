@@ -38,3 +38,28 @@ export function iconForEmoji(emoji: string | undefined): LucideIcon {
   const key = (emoji ?? "").replace(/️/g, "").trim();
   return MAP[key] ?? ShoppingBag;
 }
+
+/**
+ * Maps the same emoji keys to real photographic card visuals (Pexels, free
+ * license) stored in /public/visuals. Used wherever an image — not an icon —
+ * is the main visual of a card.
+ */
+const IMAGE_MAP: Record<string, string> = {
+  "📱": "electronics",
+  "🎧": "electronics",
+  "👗": "fashion",
+  "🧥": "fashion",
+  "👟": "footwear",
+  "💄": "beauty",
+  "🛋": "home",
+  "🛍": "shopping",
+  "🏷": "pricing",
+  "📉": "discounts",
+  "🔗": "omnichannel",
+  "📈": "shopping",
+};
+
+export function imageForEmoji(emoji: string | undefined): string {
+  const key = (emoji ?? "").replace(/️/g, "").trim();
+  return `/visuals/${IMAGE_MAP[key] ?? "shopping"}.jpg`;
+}

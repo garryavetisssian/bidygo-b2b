@@ -7,8 +7,9 @@ import { routing, type Locale } from "@/i18n/routing";
 import { Link } from "@/i18n/navigation";
 import { Section, Container, Card } from "@/components/ui/primitives";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import { getAllArticleSlugs, getArticle } from "@/data/articles";
-import { iconForEmoji } from "@/lib/visual-icons";
+import { imageForEmoji } from "@/lib/visual-icons";
 import { LocaleStub } from "@/components/site/locale-stub";
 import { absoluteUrl } from "@/lib/utils";
 import { localizedHref, buildPageGraph, buildArticleJsonLd, buildFaqJsonLd } from "@/lib/seo";
@@ -122,12 +123,6 @@ export default async function ArticlePage({
             </div>
           </div>
 
-          <div className="hidden lg:block absolute right-8 top-1/2 -translate-y-1/2 opacity-25 text-cocoa-700">
-            {(() => {
-              const Icon = iconForEmoji(article.hero.emoji);
-              return <Icon className="size-72" strokeWidth={1} aria-hidden />;
-            })()}
-          </div>
         </Container>
       </section>
 
@@ -196,11 +191,8 @@ export default async function ArticlePage({
             {related.map((a) => (
               <Link key={a.slug} href={`/resources/${a.slug}`} className="group">
                 <Card interactive className="overflow-hidden h-full flex flex-col">
-                  <div className={`h-32 ${a.hero.bgClass} grid place-items-center text-cocoa-700`}>
-                    {(() => {
-                      const Icon = iconForEmoji(a.hero.emoji);
-                      return <Icon className="size-12" strokeWidth={1.5} aria-hidden />;
-                    })()}
+                  <div className={`relative h-32 ${a.hero.bgClass} overflow-hidden`}>
+                    <Image src={imageForEmoji(a.hero.emoji)} alt="" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
                   </div>
                   <div className="p-6 flex flex-col gap-2 flex-1">
                     <div className="text-xs uppercase tracking-wider font-bold text-brand-700">{a.category}</div>

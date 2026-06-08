@@ -5,8 +5,9 @@ import { ArrowRight, Clock, Compass, DoorOpen, TrendingDown, RotateCcw, Tag } fr
 import { Link } from "@/i18n/navigation";
 import { Section, SectionHeader, Container, Card } from "@/components/ui/primitives";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import { getArticles } from "@/data/articles";
-import { iconForEmoji } from "@/lib/visual-icons";
+import { imageForEmoji } from "@/lib/visual-icons";
 import { LocaleStub } from "@/components/site/locale-stub";
 import { buildMetadata, buildPageGraph } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
@@ -80,11 +81,14 @@ export default async function ResourcesPage({
         <Link href={`/resources/${featured.slug}`} className="block group">
           <Card interactive className="overflow-hidden">
             <div className="grid lg:grid-cols-12">
-              <div className={`lg:col-span-5 min-h-[280px] lg:min-h-[400px] ${featured.hero.bgClass} grid place-items-center`}>
-                {(() => {
-                  const Icon = iconForEmoji(featured.hero.emoji);
-                  return <Icon className="size-24 text-cocoa-700" strokeWidth={1.25} aria-hidden />;
-                })()}
+              <div className={`relative lg:col-span-5 min-h-[280px] lg:min-h-[400px] ${featured.hero.bgClass} overflow-hidden`}>
+                <Image
+                  src={imageForEmoji(featured.hero.emoji)}
+                  alt=""
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover"
+                />
               </div>
               <div className="lg:col-span-7 p-8 sm:p-12 flex flex-col gap-5 justify-center">
                 <div className="flex items-center gap-3 text-xs uppercase tracking-wider font-bold text-brand-700">
@@ -158,11 +162,8 @@ export default async function ResourcesPage({
                       href={`/resources/${a.slug}`}
                       className="group flex items-center gap-4 sm:gap-5 p-5 sm:p-6 hover:bg-cream-50 transition-colors"
                     >
-                      <div className={`size-14 shrink-0 rounded-2xl ${a.hero.bgClass} grid place-items-center text-cocoa-700`}>
-                        {(() => {
-                          const Icon = iconForEmoji(a.hero.emoji);
-                          return <Icon className="size-7" strokeWidth={1.6} aria-hidden />;
-                        })()}
+                      <div className={`relative size-14 shrink-0 rounded-2xl ${a.hero.bgClass} overflow-hidden`}>
+                        <Image src={imageForEmoji(a.hero.emoji)} alt="" fill sizes="56px" className="object-cover" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 text-[0.7rem] uppercase tracking-wider font-bold text-ink-500">
