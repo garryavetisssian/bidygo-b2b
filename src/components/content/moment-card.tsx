@@ -1,19 +1,15 @@
 import { MapPin } from "lucide-react";
 import { Card } from "@/components/ui/primitives";
 import { cn } from "@/lib/utils";
+import { iconForEmoji } from "@/lib/visual-icons";
 import type { Moment } from "@/data/moments";
 
-// Facts:
-// 1. Callers: src/app/[locale]/page.tsx (replacing analyst-stat tiles) + src/app/[locale]/stories/page.tsx (new Pulse section)
-// 2. No equivalent: ls src/components/content returned 'no such file'; no MomentCard exists
-// 3. IO: pure presentational; takes Moment prop; no file/network IO
-// 4. User instruction verbatim: "start wave 2 fully"
-
 export function MomentCard({ moment, className }: { moment: Moment; className?: string }) {
+  const Icon = iconForEmoji(moment.emoji);
   return (
     <Card className={cn("p-0 overflow-hidden flex flex-col h-full", className)}>
-      <div className={cn("h-32 grid place-items-center text-5xl", moment.bg)}>
-        {moment.emoji}
+      <div className={cn("h-32 grid place-items-center", moment.bg)}>
+        <Icon className="size-12 text-cocoa-700" strokeWidth={1.75} aria-hidden />
       </div>
       <div className="p-6 flex flex-col gap-3 flex-1">
         <div className="flex items-center justify-between gap-3 text-xs">

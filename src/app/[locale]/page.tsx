@@ -27,6 +27,7 @@ import { Section, SectionHeader, Container, Badge, Card } from "@/components/ui/
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { cn } from "@/lib/utils";
+import { iconForEmoji } from "@/lib/visual-icons";
 import { OfferTicker } from "@/components/sections/offer-ticker";
 import { CalculatorTeaser } from "@/components/sections/calculator-teaser";
 import { RetailerFlowDemo } from "@/components/sections/retailer-flow-demo";
@@ -237,8 +238,11 @@ export default async function HomePage({
                 <span className="text-[0.82rem] font-semibold text-ink-900 leading-snug">{m.metric}</span>
               </div>
               <figcaption className="mt-4 pt-3.5 border-t border-ink-900/[0.06] flex items-center gap-2.5">
-                <div className={cn("size-10 rounded-full grid place-items-center text-lg shrink-0", m.bg)}>
-                  {m.emoji}
+                <div className={cn("size-10 rounded-full grid place-items-center text-cocoa-700 shrink-0", m.bg)}>
+                  {(() => {
+                    const Icon = iconForEmoji(m.emoji);
+                    return <Icon className="size-5" strokeWidth={1.75} aria-hidden />;
+                  })()}
                 </div>
                 <div className="min-w-0">
                   <div className="font-bold text-ink-900 text-sm leading-tight">{m.name}</div>
@@ -347,10 +351,13 @@ export default async function HomePage({
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div
-                  className={`relative h-40 ${ind.bg} grid place-items-center text-6xl transition-transform duration-500 group-hover:scale-[1.05] overflow-hidden`}
+                  className={`relative h-40 ${ind.bg} grid place-items-center transition-transform duration-500 group-hover:scale-[1.05] overflow-hidden`}
                 >
-                  <span className="relative z-[2] transition-transform duration-500 group-hover:scale-110">
-                    {ind.emoji}
+                  <span className="relative z-[2] text-cocoa-700 transition-transform duration-500 group-hover:scale-110">
+                    {(() => {
+                      const Icon = iconForEmoji(ind.emoji);
+                      return <Icon className="size-14" strokeWidth={1.5} aria-hidden />;
+                    })()}
                   </span>
                   <div
                     aria-hidden

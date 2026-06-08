@@ -219,8 +219,8 @@ export default async function StoriesPage({
                   aria-hidden
                   className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-500/30 to-honey-300/40 blur-3xl"
                 />
-                <div className="relative rounded-full bg-gradient-to-br from-cream-100 to-cream-200 size-56 grid place-items-center text-7xl border border-ink-900/[0.06] shadow-elevated">
-                  📈
+                <div className="relative rounded-full bg-gradient-to-br from-cream-100 to-cream-200 size-56 grid place-items-center border border-ink-900/[0.06] shadow-elevated">
+                  <TrendingUp className="size-24 text-brand-600" strokeWidth={1.5} aria-hidden />
                 </div>
               </div>
             </ScrollReveal>

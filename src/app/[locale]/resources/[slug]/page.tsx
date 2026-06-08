@@ -8,6 +8,7 @@ import { Link } from "@/i18n/navigation";
 import { Section, Container, Card } from "@/components/ui/primitives";
 import { Button } from "@/components/ui/button";
 import { getAllArticleSlugs, getArticle } from "@/data/articles";
+import { iconForEmoji } from "@/lib/visual-icons";
 import { LocaleStub } from "@/components/site/locale-stub";
 import { absoluteUrl } from "@/lib/utils";
 import { localizedHref, buildPageGraph, buildArticleJsonLd, buildFaqJsonLd } from "@/lib/seo";
@@ -121,8 +122,11 @@ export default async function ArticlePage({
             </div>
           </div>
 
-          <div className="hidden lg:block absolute right-8 top-1/2 -translate-y-1/2 text-[18rem] leading-none opacity-30">
-            {article.hero.emoji}
+          <div className="hidden lg:block absolute right-8 top-1/2 -translate-y-1/2 opacity-25 text-cocoa-700">
+            {(() => {
+              const Icon = iconForEmoji(article.hero.emoji);
+              return <Icon className="size-72" strokeWidth={1} aria-hidden />;
+            })()}
           </div>
         </Container>
       </section>
@@ -192,7 +196,12 @@ export default async function ArticlePage({
             {related.map((a) => (
               <Link key={a.slug} href={`/resources/${a.slug}`} className="group">
                 <Card interactive className="overflow-hidden h-full flex flex-col">
-                  <div className={`h-32 ${a.hero.bgClass} grid place-items-center text-5xl`}>{a.hero.emoji}</div>
+                  <div className={`h-32 ${a.hero.bgClass} grid place-items-center text-cocoa-700`}>
+                    {(() => {
+                      const Icon = iconForEmoji(a.hero.emoji);
+                      return <Icon className="size-12" strokeWidth={1.5} aria-hidden />;
+                    })()}
+                  </div>
                   <div className="p-6 flex flex-col gap-2 flex-1">
                     <div className="text-xs uppercase tracking-wider font-bold text-brand-700">{a.category}</div>
                     <h3 className="text-xl font-bold tracking-tight">{a.title}</h3>

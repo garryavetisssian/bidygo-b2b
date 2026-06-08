@@ -8,6 +8,7 @@ import { Link } from "@/i18n/navigation";
 import { Section, SectionHeader, Container, Card } from "@/components/ui/primitives";
 import { Button } from "@/components/ui/button";
 import { getAllIndustrySlugs, getIndustries, getIndustry } from "@/data/industries";
+import { iconForEmoji } from "@/lib/visual-icons";
 import { LocaleStub } from "@/components/site/locale-stub";
 import {
   buildMetadata,
@@ -97,7 +98,10 @@ export default async function IndustryPage({
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 max-w-2xl flex flex-col gap-6">
               <span className="inline-flex items-center gap-2 rounded-pill bg-white/80 backdrop-blur px-4 py-2 text-sm font-semibold text-ink-700 w-fit shadow-sm">
-                <span className="text-xl">{industry.emoji}</span>
+                {(() => {
+                  const Icon = iconForEmoji(industry.emoji);
+                  return <Icon className="size-4 text-brand-700" strokeWidth={2} aria-hidden />;
+                })()}
                 {industry.hero.eyebrow}
               </span>
               <h1 className="display-1 text-pretty">{industry.hero.headline}</h1>
@@ -117,8 +121,11 @@ export default async function IndustryPage({
             </div>
 
             <div className="lg:col-span-5">
-              <div className="relative aspect-square max-w-md mx-auto rounded-[3rem] bg-white/90 backdrop-blur shadow-xl grid place-items-center text-[14rem] leading-none">
-                {industry.emoji}
+              <div className="relative aspect-square max-w-md mx-auto rounded-[3rem] bg-white/90 backdrop-blur shadow-xl grid place-items-center text-cocoa-700">
+                {(() => {
+                  const Icon = iconForEmoji(industry.emoji);
+                  return <Icon className="size-40" strokeWidth={1} aria-hidden />;
+                })()}
               </div>
             </div>
           </div>
