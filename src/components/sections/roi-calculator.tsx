@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import { User, Sparkles, Check, Mail } from "lucide-react";
 import { Label, Input } from "@/components/ui/primitives";
 import { Button } from "@/components/ui/button";
+import { RangeField } from "@/components/ui/range-field";
 import { cn } from "@/lib/utils";
 
 interface CurrencyConfig {
@@ -107,7 +108,7 @@ export function RoiCalculator({ className }: { className?: string }) {
 
       <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
         <div className="lg:col-span-5 flex flex-col gap-6">
-          <SliderRow
+          <RangeField
             label={t("visitorsLabel")}
             hint={t("visitorsHint")}
             value={visitors}
@@ -117,7 +118,7 @@ export function RoiCalculator({ className }: { className?: string }) {
             format={(v) => intFmt.format(v)}
             onChange={setVisitors}
           />
-          <SliderRow
+          <RangeField
             label={t("walkAwayLabel")}
             hint={t("walkAwayHint")}
             value={walkAway}
@@ -127,7 +128,7 @@ export function RoiCalculator({ className }: { className?: string }) {
             format={(v) => `${v}%`}
             onChange={setWalkAway}
           />
-          <SliderRow
+          <RangeField
             label={t("ticketLabel")}
             hint={t("ticketHint")}
             value={ticket}
@@ -231,66 +232,6 @@ export function RoiCalculator({ className }: { className?: string }) {
         )}
         <p className="mt-3 text-xs text-ink-500">{t("email.finePrint")}</p>
       </div>
-    </div>
-  );
-}
-
-function SliderRow({
-  label,
-  hint,
-  value,
-  min,
-  max,
-  step,
-  format,
-  onChange,
-}: {
-  label: string;
-  hint: string;
-  value: number;
-  min: number;
-  max: number;
-  step: number;
-  format: (v: number) => string;
-  onChange: (v: number) => void;
-}) {
-  const pct = ((value - min) / (max - min)) * 100;
-  return (
-    <div>
-      <div className="flex items-end justify-between gap-3">
-        <Label className="text-base">{label}</Label>
-        <div className="font-display text-xl font-bold tracking-tight tabular-nums text-ink-900">
-          {format(value)}
-        </div>
-      </div>
-      <div className="relative mt-3">
-        <input
-          type="range"
-          min={min}
-          max={max}
-          step={step}
-          value={value}
-          onChange={(e) => onChange(Number(e.target.value))}
-          aria-label={label}
-          className="w-full appearance-none bg-transparent cursor-pointer
-            [&::-webkit-slider-runnable-track]:h-2 [&::-webkit-slider-runnable-track]:rounded-pill
-            [&::-webkit-slider-runnable-track]:bg-cream-200
-            [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:size-5
-            [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white
-            [&::-webkit-slider-thumb]:border-4 [&::-webkit-slider-thumb]:border-brand-500
-            [&::-webkit-slider-thumb]:shadow-md [&::-webkit-slider-thumb]:-mt-1.5
-            [&::-moz-range-thumb]:appearance-none [&::-moz-range-thumb]:size-5
-            [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-white
-            [&::-moz-range-thumb]:border-4 [&::-moz-range-thumb]:border-brand-500
-            [&::-moz-range-track]:h-2 [&::-moz-range-track]:rounded-pill [&::-moz-range-track]:bg-cream-200"
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 h-2 rounded-pill bg-gradient-to-r from-brand-400 to-brand-500 transition-[width] duration-150"
-          style={{ width: `calc(${pct}% - 2px)` }}
-        />
-      </div>
-      <p className="mt-1.5 text-xs text-ink-500">{hint}</p>
     </div>
   );
 }

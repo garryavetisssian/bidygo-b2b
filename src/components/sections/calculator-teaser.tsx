@@ -5,8 +5,8 @@ import { useLocale, useTranslations } from "next-intl";
 import { motion } from "motion/react";
 import { ArrowRight, Calculator } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { Label } from "@/components/ui/primitives";
 import { Button } from "@/components/ui/button";
+import { RangeField } from "@/components/ui/range-field";
 
 // Compact homepage teaser. The full email-gated tool lives on /calculator.
 // Math constants mirror roi-calculator.tsx so the teaser and full tool agree.
@@ -43,6 +43,10 @@ export function CalculatorTeaser() {
       }),
     [cfg]
   );
+  const intFmt = React.useMemo(
+    () => new Intl.NumberFormat(cfg.intlLocale, { maximumFractionDigits: 0 }),
+    [cfg]
+  );
 
   const lost = Math.round(visitors * (walkAway / 100));
   const recovered = Math.round(lost * RECOVERY_RATE);
@@ -60,22 +64,22 @@ export function CalculatorTeaser() {
 
       <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         <div className="flex flex-col gap-6">
-          <TeaserSlider
+          <RangeField
             label={tRoi("visitorsLabel")}
             value={visitors}
             min={RANGES.visitors.min}
             max={RANGES.visitors.max}
             step={RANGES.visitors.step}
-            display={new Intl.NumberFormat(cfg.intlLocale).format(visitors)}
+            format={(v) => intFmt.format(v)}
             onChange={setVisitors}
           />
-          <TeaserSlider
+          <RangeField
             label={tRoi("walkAwayLabel")}
             value={walkAway}
             min={RANGES.walkAway.min}
             max={RANGES.walkAway.max}
             step={RANGES.walkAway.step}
-            display={`${walkAway}%`}
+            format={(v) => `${v}%`}
             onChange={setWalkAway}
           />
         </div>
@@ -94,7 +98,7 @@ export function CalculatorTeaser() {
             +{fmt.format(additional)}
           </motion.span>
           <span className="text-xs text-ink-500">
-            ≈ {new Intl.NumberFormat(cfg.intlLocale).format(recovered)}{" "}
+            ≈ {intFmt.format(recovered)}{" "}
             {tRoi("output.recoveredTitle").toLowerCase()}
           </span>
           <p className="mt-3 text-xs text-ink-500 leading-relaxed border-t border-ink-900/8 pt-3">
@@ -106,63 +110,6 @@ export function CalculatorTeaser() {
             </Button>
           </Link>
         </div>
-      </div>
-    </div>
-  );
-}
-
-function TeaserSlider({
-  label,
-  value,
-  min,
-  max,
-  step,
-  display,
-  onChange,
-}: {
-  label: string;
-  value: number;
-  min: number;
-  max: number;
-  step: number;
-  display: string;
-  onChange: (v: number) => void;
-}) {
-  const pct = ((value - min) / (max - min)) * 100;
-  return (
-    <div>
-      <div className="flex items-end justify-between gap-3">
-        <Label className="text-base">{label}</Label>
-        <div className="font-display text-xl font-bold tracking-tight tabular-nums text-ink-900">
-          {display}
-        </div>
-      </div>
-      <div className="relative mt-3">
-        <input
-          type="range"
-          min={min}
-          max={max}
-          step={step}
-          value={value}
-          onChange={(e) => onChange(Number(e.target.value))}
-          aria-label={label}
-          className="w-full appearance-none bg-transparent cursor-pointer
-            [&::-webkit-slider-runnable-track]:h-2 [&::-webkit-slider-runnable-track]:rounded-pill
-            [&::-webkit-slider-runnable-track]:bg-cream-200
-            [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:size-5
-            [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white
-            [&::-webkit-slider-thumb]:border-4 [&::-webkit-slider-thumb]:border-brand-500
-            [&::-webkit-slider-thumb]:shadow-md [&::-webkit-slider-thumb]:-mt-1.5
-            [&::-moz-range-thumb]:appearance-none [&::-moz-range-thumb]:size-5
-            [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-white
-            [&::-moz-range-thumb]:border-4 [&::-moz-range-thumb]:border-brand-500
-            [&::-moz-range-track]:h-2 [&::-moz-range-track]:rounded-pill [&::-moz-range-track]:bg-cream-200"
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 h-2 rounded-pill bg-gradient-to-r from-brand-400 to-brand-500 transition-[width] duration-150"
-          style={{ width: `calc(${pct}% - 2px)` }}
-        />
       </div>
     </div>
   );
