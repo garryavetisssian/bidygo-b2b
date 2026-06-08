@@ -22,7 +22,6 @@ import {
   TrendingUp,
 } from "lucide-react";
 
-import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { Section, SectionHeader, Container, Badge, Card } from "@/components/ui/primitives";
 import { Button } from "@/components/ui/button";
@@ -147,23 +146,15 @@ export default async function HomePage({
               </div>
             </div>
 
-            {/* Hero visual = a real premium product beside its price (the moment a sale is on the
-                line) + the live recovered-sale pulse beneath it. */}
-            <div className="lg:col-span-6 relative flex flex-col gap-4 animate-rise-slow [animation-delay:380ms]">
-              <div className="relative rounded-[2rem] overflow-hidden shadow-elevated border border-ink-900/[0.06]">
-                <div className="relative aspect-[16/10]">
-                  <Image
-                    src="/visuals/hero-product.jpg"
-                    alt="A desirable product on a shop shelf beside its price tag"
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover"
-                  />
-                  <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-cocoa-700/20 to-transparent" />
-                </div>
+            {/* Hero visual = live sales pulse (proof-of-life). Widened to 6 cols to match the headline. */}
+            <div className="lg:col-span-6 relative animate-rise-slow [animation-delay:380ms]">
+              <div aria-hidden className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-6 -right-3 sm:-right-5 w-full h-full rounded-[2.5rem] bg-white/70 border border-ink-900/[0.06] shadow-stack-back -rotate-[3deg] origin-bottom-left" />
+                <div className="absolute top-3 -right-1.5 sm:-right-2.5 w-full h-full rounded-[2.5rem] bg-white/85 border border-ink-900/[0.05] shadow-stack-back -rotate-[1.5deg] origin-bottom-left" />
               </div>
-              <OfferTicker />
+              <div className="relative z-[1] lg:scale-[1.04] lg:origin-left">
+                <OfferTicker />
+              </div>
             </div>
           </div>
 
@@ -210,14 +201,6 @@ export default async function HomePage({
           <div className="absolute inset-0 bg-mesh-warm" />
           <div className="absolute top-[-18%] right-[-8%] size-[55vmax] rounded-full bg-[radial-gradient(closest-side,oklch(0.700_0.196_42/0.18),transparent)] blur-3xl" />
           <div className="absolute bottom-[-20%] left-[-10%] size-[45vmax] rounded-full bg-[radial-gradient(closest-side,oklch(0.62_0.13_165/0.10),transparent)] blur-3xl" />
-          {/* Premium real-shop interior, kept faint — warmth + credibility behind the testimonials */}
-          <Image
-            src="/visuals/shop-interior.jpg"
-            alt=""
-            fill
-            sizes="100vw"
-            className="object-cover opacity-[0.12] [mask-image:radial-gradient(110%_85%_at_50%_8%,#000,transparent_72%)]"
-          />
         </div>
 
         <div className="text-center max-w-2xl mx-auto">
@@ -392,20 +375,8 @@ export default async function HomePage({
       </Section>
 
       {/* ===================== 8 · CALCULATOR TEASER — your own numbers (Why care) ===================== */}
-      <Section tone="muted" noContainer className="relative overflow-hidden">
-        {/* Completed-sale scene (terminal + bags), kept faint — the revenue this recovers */}
-        <div aria-hidden className="absolute inset-0 -z-10">
-          <Image
-            src="/visuals/completed-sale.jpg"
-            alt=""
-            fill
-            sizes="100vw"
-            className="object-cover opacity-[0.08] [mask-image:radial-gradient(100%_75%_at_50%_50%,#000,transparent_72%)]"
-          />
-        </div>
-        <Container>
-          <CalculatorTeaser />
-        </Container>
+      <Section tone="muted">
+        <CalculatorTeaser />
       </Section>
 
       {/* ===================== 9 · CONTACT — with decision-point reassurance (Why trust → conversion) ===================== */}
