@@ -13,8 +13,12 @@ import { Label } from "@/components/ui/primitives";
  * rounded track ends. The real range input sits transparent on top for
  * drag / click / keyboard a11y (focus ring via peer-focus-visible).
  *
- * Manual entry: the value is an editable numeric input — type to set, clamped
- * to [min, max], synced both ways with the slider.
+ * Manual entry: the value is an editable numeric input — type to set. The
+ * slider stays capped at [min, max], but MANUAL typing may exceed max (a
+ * larger shop can enter its real numbers and still get a correct result);
+ * the visible thumb simply pins to the track end. Lower bound is always min.
+ * `inputMax` caps manual entry where a hard ceiling is meaningful (e.g. a
+ * percentage at 100).
  */
 
 const THUMB = "1.25rem"; // 20px — keep in sync with the thumb size class below
@@ -29,6 +33,7 @@ export function RangeField({
   step,
   format,
   onChange,
+  inputMax,
 }: {
   label: string;
   hint?: string;
@@ -38,20 +43,27 @@ export function RangeField({
   step: number;
   format: (v: number) => string;
   onChange: (v: number) => void;
+  /** Hard ceiling for MANUAL entry. Defaults to no upper limit (slider still caps at max). */
+  inputMax?: number;
 }) {
   const [editing, setEditing] = React.useState(false);
   const [draft, setDraft] = React.useState("");
 
-  const pct = max > min ? (value - min) / (max - min) : 0;
+  // Visual position is clamped to the track even if the manual value exceeds max.
+  const rawPct = max > min ? (value - min) / (max - min) : 0;
+  const pct = Math.min(1, Math.max(0, rawPct));
   // Position of the thumb centre, inset by half the thumb at each end.
   const pos = `calc(${pct} * (100% - ${THUMB}) + ${HALF_THUMB})`;
+  // The native slider can only represent [min, max]; manual overflow lives in state only.
+  const sliderValue = Math.min(max, Math.max(min, value));
 
   function commit(raw: string) {
     const digits = raw.replace(/[^0-9]/g, "");
     if (digits === "") return;
     const parsed = Number.parseInt(digits, 10);
     if (Number.isNaN(parsed)) return;
-    onChange(Math.min(max, Math.max(min, parsed)));
+    const upper = inputMax ?? Number.POSITIVE_INFINITY;
+    onChange(Math.min(upper, Math.max(min, parsed)));
   }
 
   return (
@@ -85,7 +97,7 @@ export function RangeField({
           min={min}
           max={max}
           step={step}
-          value={value}
+          value={sliderValue}
           onChange={(e) => onChange(Number(e.target.value))}
           aria-label={label}
           aria-valuetext={format(value)}

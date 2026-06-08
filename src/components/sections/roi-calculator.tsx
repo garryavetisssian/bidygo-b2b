@@ -26,9 +26,9 @@ const TOTAL_ICONS = 50;
 const OPEN_HOURS_PER_MONTH = 300;
 
 const RANGES = {
-  visitors: { min: 200, max: 20000, step: 100, default: 2400 },
-  walkAway: { min: 30, max: 95, step: 1, default: 72 },
-  ticket: { min: 10, max: 1500, step: 5, default: 95 },
+  visitors: { min: 0, max: 20000, step: 100, default: 2400 },
+  walkAway: { min: 0, max: 95, step: 1, default: 72 },
+  ticket: { min: 0, max: 1500, step: 5, default: 95 },
 };
 
 export function RoiCalculator({ className }: { className?: string }) {
@@ -125,6 +125,7 @@ export function RoiCalculator({ className }: { className?: string }) {
             min={RANGES.walkAway.min}
             max={RANGES.walkAway.max}
             step={RANGES.walkAway.step}
+            inputMax={100}
             format={(v) => `${v}%`}
             onChange={setWalkAway}
           />

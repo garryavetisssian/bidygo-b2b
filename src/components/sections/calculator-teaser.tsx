@@ -21,8 +21,8 @@ const DISCOUNT_FACTOR = 0.88;
 const FIXED_TICKET = 95; // teaser keeps ticket fixed; full calculator exposes it.
 
 const RANGES = {
-  visitors: { min: 200, max: 20000, step: 100, default: 2400 },
-  walkAway: { min: 30, max: 95, step: 1, default: 72 },
+  visitors: { min: 0, max: 20000, step: 100, default: 2400 },
+  walkAway: { min: 0, max: 95, step: 1, default: 72 },
 };
 
 export function CalculatorTeaser() {
@@ -79,6 +79,7 @@ export function CalculatorTeaser() {
             min={RANGES.walkAway.min}
             max={RANGES.walkAway.max}
             step={RANGES.walkAway.step}
+            inputMax={100}
             format={(v) => `${v}%`}
             onChange={setWalkAway}
           />
