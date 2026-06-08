@@ -801,19 +801,41 @@
     "breadcrumbHub": "For shops"
   },
   "resourcesPage": {
-    "eyebrow": "Resources",
-    "headline": "The reading list we wish we'd had when we started Bidygo.",
-    "subhead": "Short reads on selling more in your shop. Written by shop owners and the Bidygo team.",
+    "eyebrow": "Retail Growth Center",
+    "headline": "Grow your sales without cutting your prices.",
+    "subhead": "Straight answers for shop owners — why customers walk out, what blanket discounts really cost you, and how to win back the sales you're losing.",
     "featured": "Featured",
     "min": "min",
     "readEssay": "Read the essay",
-    "libraryEyebrow": "The full library",
-    "libraryTitle": "Essays & playbooks",
+    "libraryEyebrow": "Retail playbooks",
+    "libraryTitle": "Browse every playbook",
     "readMore": "Read more",
     "monthly": "More essays publishing monthly. Subscribe in the footer to get them in your inbox.",
-    "questionTitle": "Got a retail question we should write about?",
-    "questionBody": "We're building this library based on what shops ask us. Email <email>hello@bidygo.com</email> with your question — if it's a good one, it'll show up here.",
-    "talkInstead": "Talk to us instead"
+    "questionTitle": "Stop losing the sales that walk out.",
+    "questionBody": "Everything here is exactly what Bidygo does in your shop — win back the customers who'd otherwise leave, without blanket discounts. See what it could mean for your sales.",
+    "talkInstead": "Talk to us",
+    "problemsEyebrow": "Start with your problem",
+    "problemsTitle": "What's costing you sales right now?",
+    "problemsNote": "Pick what's happening in your shop — we'll take you straight to the answer.",
+    "problems": [
+      {
+        "question": "Why am I losing sales at the shelf?",
+        "answer": "Customers compare your price and buy it elsewhere. Here's what's really happening — and what you can do about it."
+      },
+      {
+        "question": "Why do blanket discounts hurt my margin?",
+        "answer": "The real cost of every site-wide sale, and the maths most shops never run."
+      },
+      {
+        "question": "How do I recover the sales that walk out?",
+        "answer": "Give the customer who's about to leave one more reason to buy — without dropping your shelf price for everyone."
+      },
+      {
+        "question": "What's the alternative to discounting everyone?",
+        "answer": "Let shoppers tell you what they'll pay, and decide deal by deal. Here's how it actually works."
+      }
+    ],
+    "calcCta": "See your numbers"
   },
   "articlePage": {
     "back": "Back to all resources",
